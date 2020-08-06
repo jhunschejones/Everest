@@ -1,0 +1,31 @@
+html {
+  background-color: $background-color;
+}
+
+.page-container {
+  margin-top: 52px;
+}
+
+.navbar {
+  .menu-spacer {
+    width: 128px;
+  }
+  .navbar-title {
+    font-size: 1.4em;
+    @media screen and (max-width: $navbar-breakpoint) {
+      font-size: 1.3em;
+      font-weight: 500 !important;
+    }
+  }
+  .site-logo-image {
+    height: 28px;
+    margin: -5px 8px 0px 0px;
+    @media screen and (max-width: $navbar-breakpoint) {
+      height: 24px;
+    }
+  }
+}
+
+.flash {
+  margin: 5px;
+}

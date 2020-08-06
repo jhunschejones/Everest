@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Everest</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +12,54 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" data-controller="main-nav">
+      <div class="navbar-brand">
+        <a class="navbar-item menu-spacer" href="/">
+          <%= image_tag("logo.png", class: "site-logo-image") %>
+          <span class="navbar-title has-text-weight-semibold">Everest</span>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-nav.mainNavBurger" data-action="click->main-nav#toggle">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu main-nav-menu" data-target="main-nav.mainNavMenu">
+        <div
+          class="navbar-start"
+          style="margin-left: auto; margin-right: unset !important;"
+        >
+          <a class="navbar-item has-text-weight-bold" href="/">Home</a>
+          <a class="navbar-item has-text-weight-bold" href="/">Activity</a>
+          <a class="navbar-item has-text-weight-bold" href="/">Documents</a>
+          <a class="navbar-item has-text-weight-bold" href="/">Resume</a>
+        </div>
+
+        <div class="navbar-end menu-spacer"></div>
+      </div>
+    </nav>
+
+    <div class="page-container">
+      <% if flash[:alert] %>
+        <div class="flash notification is-danger" data-controller="flash">
+          <button class="delete" data-action="click->flash#close"></button>
+          <p class="notice"><%= flash[:alert] %></p>
+        </div>
+      <% elsif flash[:notice] %>
+        <div class="flash notification is-warning" data-controller="flash">
+          <button class="delete" data-action="click->flash#close"></button>
+          <p class="notice"><%= flash[:notice] %></p>
+        </div>
+      <% elsif flash[:success] %>
+        <div class="flash notification is-success" data-controller="flash">
+          <button class="delete" data-action="click->flash#close"></button>
+          <p class="notice"><%= flash[:success] %></p>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

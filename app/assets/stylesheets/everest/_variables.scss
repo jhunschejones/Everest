@@ -1,0 +1,12 @@
+// Site variables
+$background-color: #f6f2ef;
+$nav-item-color: #283c46;
+$card-background: #FFF;
+
+// Bulma overrides
+$navbar-breakpoint: 720px;
+$navbar-background-color: $background-color;
+$navbar-item-color: $nav-item-color;
+$navbar-item-hover-color: $nav-item-color;
+$navbar-item-hover-background-color: $background-color;
+$navbar-dropdown-background-color: $card-background;
