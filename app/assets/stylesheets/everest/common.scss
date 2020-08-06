@@ -24,6 +24,13 @@ html {
       height: 24px;
     }
   }
+  .main-nav-items {
+    margin-left: auto;
+    margin-right: unset;
+    .icon {
+      margin-right: 5px;
+    }
+  }
 }
 
 .flash {
