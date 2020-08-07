@@ -1,0 +1,22 @@
+<div class="new-project">
+  <div class="new-project-form-container">
+    <h2 class="title is-4">New project</h2>
+
+    <%= form_with(model: @project, url: projects_path) do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description, autocomplete: 'off', class: "textarea" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Create", class: "button is-info" %>
+        <%= link_to "Back", projects_path, class: "button is-info is-outlined" %>
+      </div>
+    <% end %>
+  </div>
+</div>

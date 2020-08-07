@@ -1,8 +1,138 @@
 .all-projects {
-  .projects-title {
-    padding-top: 14px;
+  .projects-page-title {
+    padding: 20px 0px 24px 0px;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.9em;
     font-weight: 700;
+  }
+  .project-cards-container {
+    display: flex;
+    justify-content: center;
+    .project-card {
+      .project-link {
+        display: block;
+        height: 100%;
+        width: auto;
+        padding: 16px 20px;
+      }
+      width: 100%;
+      max-width: 625px;
+      min-height: 200px;
+      background-color: $card-background;
+      box-shadow: $shallow-box-shadow;
+      border-radius: 9px;
+      margin: 0px 12px 12px 12px;
+      .project-title {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: $dark-text-color;
+      }
+      .project-description {
+        color: $dark-text-color;
+        max-height: 100%;
+        margin: 2px 0px 12px 0px;
+      }
+      .user-avatar {
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        margin: 0px 3px;
+      }
+    }
+  }
+}
+
+.project-details-container {
+  display: flex;
+  justify-content: center;
+  .project-details-card {
+    margin-top: 10px;
+    margin-bottom: 16px;
+    padding: 20px;
+    background-color: $card-background;
+    box-shadow: $deep-box-shadow;
+    width: 90%;
+    min-height: 88vh;
+    border-radius: 3px;
+    .project-name {
+      text-align: center;
+      font-size: 1.9em;
+      font-weight: 700;
+      padding: 12px 0px;
+    }
+    .project-description {
+      padding: 10px 40px 14px 40px;
+    }
+    .user-avatars-container {
+      display: flex;
+      justify-content: center;
+      .user-avatar {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        margin: 2px;
+      }
+    }
+    .project-resources-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .project-resource-card {
+        padding: 20px;
+        height: 245px;
+        width: 245px;
+        box-shadow: $medium-box-shadow;
+        border-radius: 8px;
+        margin: 12px 12px;
+        .project-resource-card-header {
+          font-weight: bold;
+          text-align: center;
+          padding: 0px 0px;
+          margin-bottom: -8px;
+        }
+        .documents-container {
+          display: flex;
+          justify-content: center;
+          .document {
+            height: 105px;
+            width: 80px;
+            box-shadow: $medium-box-shadow;
+            border-radius: 3px;
+            margin: 0px 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+              margin: -2px 0px 0px -2px;
+              transform: rotate(-50deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.new-project,
+.edit-project {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  .new-project-form-container,
+  .edit-project-form-container {
+    width: 100%;
+    max-width: 700px;
+    .title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #4a4a4a;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .actions {
+      padding-top: 10px;
+    }
   }
 }

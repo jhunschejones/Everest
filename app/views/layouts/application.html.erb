@@ -28,12 +28,12 @@
 
       <div class="navbar-menu main-nav-menu" data-target="main-nav.mainNavMenu">
         <div class="navbar-start main-nav-items">
-          <a class="navbar-item has-text-weight-bold" href="/">
+          <%= link_to(projects_path, class: "navbar-item has-text-weight-bold") do %>
             <span class="icon is-small">
               <i class="fas fa-home"></i>
             </span>
             <span>Home</span>
-          </a>
+          <% end %>
           <a class="navbar-item has-text-weight-bold" href="/">
             <span class="icon is-small">
               <i class="fas fa-chart-pie"></i>

@@ -1,0 +1,13 @@
+.login-form-container {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  .login-form {
+    .title {
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+    max-width: 600px;
+    width: 100%;
+  }
+}

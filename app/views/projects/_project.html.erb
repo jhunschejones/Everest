@@ -1,0 +1,13 @@
+<div class="project-card">
+  <%= link_to(project_path(project), class: "project-link") do %>
+    <h2 class="project-title"><%= project.name %></h2>
+    <p class="project-description"><%= truncate(project.description, length: 225, separator: " ") %></p>
+    <div class="project-user-avatars">
+      <%= image_tag("jj-avatar.png", class: "user-avatar") %>
+      <%= image_tag("jh-avatar.png", class: "user-avatar") %>
+      <%= image_tag("tt-avatar.png", class: "user-avatar") %>
+      <%= image_tag("tm-avatar.png", class: "user-avatar") %>
+      <%= image_tag("ds-avatar.png", class: "user-avatar") %>
+    </div>
+  <% end %>
+</div>
