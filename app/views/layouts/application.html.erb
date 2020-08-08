@@ -14,10 +14,10 @@
   <body>
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" data-controller="main-nav">
       <div class="navbar-brand">
-        <a class="navbar-item menu-spacer" href="/">
+        <%= link_to(projects_path, class: "navbar-item menu-spacer") do %>
           <%= image_tag("logo.png", class: "site-logo-image") %>
           <span class="navbar-title has-text-weight-semibold">Everest</span>
-        </a>
+        <% end %>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-nav.mainNavBurger" data-action="click->main-nav#toggle">
           <span aria-hidden="true"></span>
@@ -34,18 +34,18 @@
             </span>
             <span>Home</span>
           <% end %>
-          <a class="navbar-item has-text-weight-bold" href="/">
+          <%= link_to(activities_path, class: "navbar-item has-text-weight-bold") do %>
             <span class="icon is-small">
               <i class="fas fa-chart-pie"></i>
             </span>
             <span>Activity</span>
-          </a>
-          <a class="navbar-item has-text-weight-bold" href="/">
+          <% end %>
+          <%= link_to(documents_path, class: "navbar-item has-text-weight-bold") do %>
             <span class="icon is-small">
               <i class="fas fa-file-alt"></i>
             </span>
             <span>Documents</span>
-          </a>
+          <% end %>
           <a class="navbar-item has-text-weight-bold" href="/">
             <span class="icon is-small">
               <i class="fas fa-user-check"></i>

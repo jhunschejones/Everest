@@ -1,0 +1,23 @@
+<div class="new-activity">
+  <div class="new-activity-form-container">
+    <h2 class="title is-4">New activity</h2>
+
+    <%= form_with(model: @activity, url: project_activities_path(@project)) do |f| %>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :created_at %><br />
+        <%= f.date_select :created_at, use_short_month: true, order: [:month, :day, :year], start_year: 5.years.ago.year %>
+        <small class="has-text-grey-light">(USA Pacific Time)</small>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Create", class: "button is-info" %>
+        <%= link_to "Back", project_path(@project), class: "button is-info is-outlined" %>
+      </div>
+    <% end %>
+  </div>
+</div>

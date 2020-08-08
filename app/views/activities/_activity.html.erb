@@ -1,0 +1,11 @@
+<div class="activity-container-<%= locals[:direction] %>">
+  <div class="activity">
+    <%= image_tag("jj-avatar.png", class: "user-avatar") %>
+    <div class="activity-right-column">
+      <h3 class="activity-title"><%= activity.title %></h3>
+      <div class="activity-created-at has-text-grey-light">
+        <%= activity.created_at.localtime.strftime("%B %-d, %Y") %>
+      </div>
+    </div>
+  </div>
+</div>

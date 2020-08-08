@@ -1,10 +1,14 @@
 @charset "UTF-8";
 
 @import "variables";
+
+@import "trix/dist/trix";
 @import "font_awesome5_webfont";
 @import "bulma";
 @import "actiontext";
+
 @import "common";
 @import "projects";
 @import "documents";
 @import "sessions";
+@import "activities";

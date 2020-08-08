@@ -1,0 +1,129 @@
+.new-activity,
+.edit-activity {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  .new-activity-form-container,
+  .edit-activity-form-container {
+    width: 100%;
+    max-width: 700px;
+    .title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #4a4a4a;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .actions {
+      padding-top: 10px;
+    }
+  }
+}
+
+.all-activities-container {
+  display: flex;
+  justify-content: center;
+  .all-activities-card {
+    margin-top: 10px;
+    margin-bottom: 18px;
+    padding: 20px;
+    background-color: $card-background;
+    box-shadow: $deep-box-shadow;
+    width: 90%;
+    max-width: 930px;
+    min-height: 88vh;
+    border-radius: 3px;
+    @media screen and (min-width: $navbar-breakpoint) {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.activities-title {
+  text-align: center;
+  font-size: 1.9em;
+  font-weight: 700;
+  padding: 12px 0px 24px 0px;
+  color: $dark-text-color;
+}
+.activities-timeline {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding-bottom: 16px;
+  .activity-month-header {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 10px 0px;
+    position: relative;
+    color: $dark-text-color;
+
+    @media screen and (max-width: 1034px) {
+      &:before {
+        content: "";
+        display: block;
+        width: calc(50% - 120px);
+        height: 1px;
+        background: hsl(0, 0%, 86%);
+        left: 20px;
+        top: 50%;
+        position: absolute;
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: calc(50% - 120px);
+        height: 1px;
+        background: hsl(0, 0%, 86%);
+        right: 20px;
+        top: 50%;
+        position: absolute;
+      }
+    }
+  }
+  .activity-container-left {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    @media screen and (min-width: 1035px) {
+      .activity {
+        padding-right: 20px;
+        border-right: 1px solid hsl(0, 0%, 86%);
+      }
+    }
+  }
+  .activity-container-right {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    @media screen and (min-width: 1035px) {
+      .activity {
+        padding-left: 20px;
+        border-left: 1px solid hsl(0, 0%, 86%);
+      }
+    }
+  }
+  .activity {
+    display: flex;
+    width: 100%;
+    max-width: 445px;
+    margin-top: 16px;
+    .user-avatar {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .activity-right-column {
+      display: flex;
+      flex-direction: column;
+      .activity-title {
+        font-size: 1.1em;
+        color: $dark-text-color;
+      }
+    }
+  }
+}

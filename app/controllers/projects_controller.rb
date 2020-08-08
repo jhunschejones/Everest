@@ -3,10 +3,11 @@ class ProjectsController < ApplicationController
   before_action :set_project, except: [:index, :new, :create]
 
   def index
-    @projects = Project.all
+    @projects = Project.all.order({ created_at: :desc })
   end
 
   def show
+    @activities_by_month_and_year = @project.activities.ordered.group_by(&:month_and_year)
   end
 
   def new
@@ -33,6 +34,6 @@ class ProjectsController < ApplicationController
   end
 
   def set_project
-    @project = Project.find(params[:id])
+    @project = Project.includes(:activities).find(params[:id])
   end
 end

@@ -30,7 +30,7 @@
       .project-description {
         color: $dark-text-color;
         max-height: 100%;
-        margin: 2px 0px 12px 0px;
+        margin: 2px 0px 20px 0px;
       }
       .user-avatar {
         height: 45px;
@@ -47,13 +47,17 @@
   justify-content: center;
   .project-details-card {
     margin-top: 10px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     padding: 20px;
     background-color: $card-background;
     box-shadow: $deep-box-shadow;
     width: 90%;
+    max-width: 930px;
     min-height: 88vh;
     border-radius: 3px;
+    @media screen and (min-width: $navbar-breakpoint) {
+      margin-bottom: 35px;
+    }
     .project-name {
       text-align: center;
       font-size: 1.9em;
@@ -74,7 +78,7 @@
       }
     }
     .project-resources-container {
-      margin-top: 20px;
+      margin: 20px 0px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;

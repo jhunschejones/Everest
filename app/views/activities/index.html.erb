@@ -1,0 +1,12 @@
+<div class="all-activities-container">
+  <div class="all-activities-filters"></div>
+  <div class="all-activities-card">
+    <h1 class="activities-title">Latest Activity</h1>
+    <div class="activities-timeline">
+      <% @activities_by_month_and_year.each do |month_and_year, activities| %>
+        <h2 class="activity-month-header"><%= month_and_year %></h2>
+        <%= render(activities, locals: { direction: cycle("left", "right") }) %>
+      <% end %>
+    </div>
+  </div>
+</div>
