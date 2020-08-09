@@ -79,26 +79,3 @@
     }
   }
 }
-
-.new-project,
-.edit-project {
-  padding: 12px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  .new-project-form-container,
-  .edit-project-form-container {
-    width: 100%;
-    max-width: 700px;
-    .title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #4a4a4a;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    .actions {
-      padding-top: 10px;
-    }
-  }
-}
