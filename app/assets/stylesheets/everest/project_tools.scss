@@ -4,6 +4,11 @@
   box-shadow: $medium-box-shadow;
   border-radius: 8px;
   margin: 12px 12px;
+  hr {
+    height: 1px;
+    background-color: hsl(0, 0%, 86%);
+    border: none;
+  }
   .project-tool-link {
     display: flex;
     flex-direction: column;
