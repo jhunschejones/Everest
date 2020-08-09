@@ -17,6 +17,7 @@ gem 'blind_index'
 
 gem 'font_awesome5_rails'
 gem 'bulma-rails'
+gem 'avatarly'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

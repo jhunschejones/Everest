@@ -1,6 +1,6 @@
 <div class="activity-container-<%= direction %>">
   <div class="activity">
-    <%= image_tag("jj-avatar.png", class: "user-avatar") %>
+    <%= image_tag("/images/#{activity.user.initials}-avatar.png", class: "user-avatar") %>
     <div class="activity-right-column">
       <h3 class="activity-title"><%= activity.title %></h3>
       <div class="activity-created-at has-text-grey-light">

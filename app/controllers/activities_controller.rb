@@ -5,9 +5,9 @@ class ActivitiesController < ApplicationController
   def index
     @activities_by_month_and_year =
       if params[:project_id].blank?
-        Activity.all.includes(:project)
+        Activity.all.includes(:project, :user)
       else
-        Activity.where(project_id: params[:project_id])
+        Activity.where(project_id: params[:project_id]).includes(:user)
       end.ordered.group_by(&:month_and_year)
   end
 

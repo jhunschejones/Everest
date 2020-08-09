@@ -14,4 +14,9 @@ class User < ApplicationRecord
   def is_admin?
     site_role == SITE_ADMIN
   end
+
+  # https://github.com/basecamp/name_of_person/blob/master/lib/name_of_person/person_name.rb#L51-L54
+  def initials
+    name.remove(/(\(|\[).*(\)|\])/).scan(/([[:word:]])[[:word:]]*/i).join
+  end
 end
