@@ -1,0 +1,10 @@
+<%= link_to(project_document_path(project ? project : document.project, document), class: "document-link") do %>
+  <div class="document">
+    <h4 class="document-title"><%= document.title %></h4>
+    <p class="document-body-preview">
+      <small>
+        <%= truncate(document.content.to_plain_text, length: 500, separator: " ") %>
+      </small>
+    </p>
+  </div>
+<% end %>

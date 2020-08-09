@@ -1,0 +1,28 @@
+<div class="edit-document">
+  <div class="edit-document-form-container">
+    <h2 class="title is-4">Edit document</h2>
+
+    <%= form_with(model: @document, url: project_document_path(@project, @document)) do |f| %>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :content %><br />
+        <%= f.rich_text_area :content %>
+      </div>
+
+      <div class="field">
+        <%= f.label :created_at %><br />
+        <%= f.date_select :created_at, use_short_month: true, order: [:month, :day, :year], start_year: 5.years.ago.year %>
+        <small class="has-text-grey-light">(USA Pacific Time)</small>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Update", class: "button is-info" %>
+        <%= link_to "Back", :back, class: "button is-info is-outlined" %>
+      </div>
+    <% end %>
+  </div>
+</div>

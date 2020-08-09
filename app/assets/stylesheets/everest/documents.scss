@@ -1,3 +1,162 @@
-// Place all the styles related to the documents controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.new-document,
+.edit-document {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  .new-document-form-container,
+  .edit-document-form-container {
+    width: 100%;
+    max-width: 700px;
+    .title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #4a4a4a;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .actions {
+      padding-top: 10px;
+    }
+  }
+}
+
+.project-documents-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .project-documents-card {
+    margin-top: 10px;
+    margin-bottom: 18px;
+    padding: 20px;
+    background-color: $card-background;
+    box-shadow: $deep-box-shadow;
+    width: 90%;
+    max-width: 930px;
+    min-height: 88vh;
+    border-radius: 3px;
+    @media screen and (min-width: $navbar-breakpoint) {
+      margin-bottom: 35px;
+    }
+    .project-documents-title {
+      text-align: center;
+      font-size: 1.9em;
+      font-weight: 700;
+      padding: 12px 0px;
+      margin: 0px 60px;
+      color: $dark-text-color;
+      border-bottom: 3px solid $dark-text-color;
+    }
+    .project-documents {
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .document-link {
+        color: $dark-text-color;
+      }
+      .document {
+        height: 230px;
+        width: 175px;
+        box-shadow: $medium-box-shadow;
+        border-radius: 8px;
+        margin: 12px;
+        color: $dark-text-color;
+        overflow: hidden;
+        padding: 14px;
+        position: relative;
+        .document-title {
+          font-weight: 700;
+          line-height: 1.3;
+        }
+        .document-body-preview {
+          margin-top: 10px;
+          line-height: 1.2;
+          font-size: 0.825em;
+        }
+        // fade to white at the bottom of the document card
+        &:after {
+          content: "";
+          position: absolute;
+          bottom : 0;
+          left: 0;
+          pointer-events: none;
+          background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+          width: 100%;
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+
+.project-document-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .project-document-card {
+    margin-top: 10px;
+    margin-bottom: 18px;
+    padding: 20px;
+    background-color: $card-background;
+    box-shadow: $deep-box-shadow;
+    width: 90%;
+    max-width: 930px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    @media screen and (min-width: $navbar-breakpoint) {
+      margin-bottom: 35px;
+    }
+    .document {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 700px;
+      .created-at {
+        margin-bottom: 2px;
+      }
+      .project-document-title {
+        font-size: 2.4em;
+        font-weight: 700;
+        line-height: 1.2;
+        color: $dark-text-color;
+      }
+      .project-document-content {
+        margin-top: 20px;
+        color: $dark-text-color;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.project-breadcrumb {
+  margin-top: 10px;
+  width: 90%;
+  max-width: 830px;
+  background-color: $card-background;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 10px 30px #f3ece8;
+  border-radius: 3px;
+  text-align: center;
+  height: 48px;
+  margin-bottom: -11px;
+  padding-top: 11px;
+  .project-breadcrumb-link {
+    padding-top: 20px;
+    font-size: 1.05em;
+    @media screen and (max-width: 400px) {
+      font-size: 0.85em;
+    }
+    .link-text {
+      margin-left: 2px;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+  .project-documents-breadcrumb-link {
+    text-decoration: underline;
+    @media screen and (max-width: 400px) {
+      font-size: 0.85em;
+    }
+  }
+}

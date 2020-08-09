@@ -1,0 +1,18 @@
+<div class="project-documents-container">
+  <% if @project.present? %>
+  <div class="project-breadcrumb">
+    <%= link_to(project_path(@project), class: "project-breadcrumb-link") do %>
+      <span class="icon is-small has-text-grey-lighter">
+        <i class="fas fa-th-large"></i>
+      </span>
+      <span class="has-text-link link-text"><%= @project.name %></span>
+    <% end %>
+  </div>
+  <% end %>
+  <div class="project-documents-card">
+    <h1 class="project-documents-title">Docs & Files</h1>
+    <div class="project-documents">
+      <%= render(partial: 'documents/document', collection: @documents, locals: { project: @project }, cached: true) %>
+    </div>
+  </div>
+</div>

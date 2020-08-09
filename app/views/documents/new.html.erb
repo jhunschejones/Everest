@@ -1,0 +1,22 @@
+<div class="new-document">
+  <div class="new-document-form-container">
+    <h2 class="title is-4">New document</h2>
+
+    <%= form_with(model: @document, url: project_documents_path(@project)) do |f| %>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :content %><br />
+        <%= f.rich_text_area :content %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Create", class: "button is-info" %>
+        <%= link_to "Back", :back, class: "button is-info is-outlined" %>
+      </div>
+    <% end %>
+  </div>
+</div>

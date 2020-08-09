@@ -1,0 +1,23 @@
+<div class="project-document-container">
+  <div class="project-breadcrumb">
+    <%= link_to(project_path(@project), class: "project-breadcrumb-link") do %>
+      <span class="icon is-small has-text-grey-lighter">
+        <i class="fas fa-th-large"></i>
+      </span>
+      <span class="has-text-link link-text"><%= @project.name %></span>
+    <% end %>
+    <small>&nbsp;&#10095;&nbsp;</small>
+    <%= link_to("Docs & Files", project_documents_path(@project), class: "has-text-link project-documents-breadcrumb-link")%>
+  </div>
+  <div class="project-document-card">
+    <div class="document">
+      <p class="created-at has-text-grey-light">
+        <small>Created at <%= @document.created_at.localtime.strftime("%B %-d, %Y") %></small>
+      </p>
+      <h1 class="project-document-title"><%= @document.title %></h1>
+      <div class="project-document-content">
+        <%= @document.content %>
+      </div>
+    </div>
+  </div>
+</div>

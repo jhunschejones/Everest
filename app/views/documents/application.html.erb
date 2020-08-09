@@ -1,0 +1,28 @@
+<div class="project-document-container">
+  <div class="project-breadcrumb">
+    <%= link_to(application_path(document: Document::RESUME), class: "has-text-link project-breadcrumb-link") do %>
+      <span class="icon is-small has-text-grey-lighter">
+        <i class="fas fa-file-alt"></i>
+      </span>
+      <span class="has-text-link link-text">Resume</span>
+    <% end %>
+    &nbsp;&nbsp;
+    <%= link_to(application_path(document: Document::COVER_LETTER), class: "has-text-link project-breadcrumb-link") do %>
+      <span class="icon is-small has-text-grey-lighter">
+        <i class="fas fa-file-alt"></i>
+      </span>
+      <span class="has-text-link link-text">Cover Letter</span>
+    <% end %>
+  </div>
+  <div class="project-document-card">
+    <div class="document">
+      <h1 class="project-document-title"><%= @document.title %></h1>
+      <p class="document-download has-text-link">
+        <a href="/Jones<%= @document.title.split.join %>.pdf" download>Download</a>
+      </p>
+      <div class="project-document-content">
+        <%= @document.content %>
+      </div>
+    </div>
+  </div>
+</div>

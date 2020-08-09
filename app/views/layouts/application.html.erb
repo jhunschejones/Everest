@@ -46,12 +46,12 @@
             </span>
             <span>Documents</span>
           <% end %>
-          <a class="navbar-item has-text-weight-bold" href="/">
+          <%= link_to(application_path(document: Document::RESUME), class: "navbar-item has-text-weight-bold") do %>
             <span class="icon is-small">
               <i class="fas fa-user-check"></i>
             </span>
             <span>Resume</span>
-          </a>
+          <% end %>
         </div>
 
         <div class="navbar-end menu-spacer"></div>
