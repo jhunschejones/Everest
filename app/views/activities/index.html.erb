@@ -5,7 +5,7 @@
     <div class="activities-timeline">
       <% @activities_by_month_and_year.each do |month_and_year, activities| %>
         <h2 class="activity-month-header"><%= month_and_year %></h2>
-        <%= render(activities, locals: { direction: cycle("left", "right") }) %>
+        <%= render(partial: 'activities/activity', collection: activities, locals: { direction: cycle("left", "right") }, cached: true) %>
       <% end %>
     </div>
   </div>

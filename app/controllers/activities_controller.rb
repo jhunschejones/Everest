@@ -36,11 +36,6 @@ class ActivitiesController < ApplicationController
     redirect_to project_activities_path(@project)
   end
 
-  def destroy
-    @activity.destroy
-    redirect_to project_activities_path(@project)
-  end
-
   private
 
   def activity_params
