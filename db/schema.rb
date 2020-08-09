@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_034312) do
+ActiveRecord::Schema.define(version: 2020_08_09_053337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,16 @@ ActiveRecord::Schema.define(version: 2020_08_06_034312) do
     t.index ["project_id"], name: "index_documents_on_project_id"
   end
 
+  create_table "project_tools", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "link", null: false
+    t.text "content_preview"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_project_tools_on_project_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
@@ -95,6 +105,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_034312) do
   add_foreign_key "activities", "projects", on_delete: :cascade
   add_foreign_key "activities", "users", on_delete: :cascade
   add_foreign_key "documents", "projects", on_delete: :cascade
+  add_foreign_key "project_tools", "projects", on_delete: :cascade
   add_foreign_key "user_projects", "projects", on_delete: :cascade
   add_foreign_key "user_projects", "users", on_delete: :cascade
 end

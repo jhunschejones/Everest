@@ -33,8 +33,8 @@
         margin: 2px 0px 20px 0px;
       }
       .user-avatar {
-        height: 45px;
-        width: 45px;
+        height: 42px;
+        width: 42px;
         border-radius: 50%;
         margin: 0px 3px;
       }
@@ -82,48 +82,6 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      .project-resource-card {
-        height: 245px;
-        width: 245px;
-        box-shadow: $medium-box-shadow;
-        border-radius: 8px;
-        margin: 12px 12px;
-        .document-resource-card-link {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          height: 100%;
-          padding: 20px;
-          color: $dark-text-color;
-          .the-code-image {
-            margin-top: -6px;
-          }
-        }
-        .project-resource-card-header {
-          font-weight: bold;
-          text-align: center;
-          padding: 0px 0px;
-          margin-bottom: -8px;
-        }
-        .documents-container {
-          display: flex;
-          justify-content: center;
-          .document {
-            height: 105px;
-            width: 80px;
-            box-shadow: $medium-box-shadow;
-            border-radius: 3px;
-            margin: 0px 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            p {
-              margin: -2px 0px 0px -2px;
-              transform: rotate(-50deg);
-            }
-          }
-        }
-      }
     }
   }
 }

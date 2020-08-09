@@ -1,0 +1,27 @@
+<div class="edit-project-tool">
+  <div class="edit-project-tool-form-container">
+    <h2 class="title is-4">Edit project tool</h2>
+
+    <%= form_with(model: @project_tool, url: project_project_tool_path(@project, @project_tool)) do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :link %>
+        <%= f.text_field :link, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :content_preview %>
+        <%= f.text_area :content_preview, autocomplete: 'off', class: "textarea" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Update", class: "button is-info" %>
+        <%= link_to "Back", projects_path, class: "button is-info is-outlined" %>
+      </div>
+    <% end %>
+  </div>
+</div>

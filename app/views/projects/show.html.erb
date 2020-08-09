@@ -3,19 +3,16 @@
     <h1 class="project-name"><%= @project.name %></h1>
     <p class="project-description"><%= @project.description %>
     <div class="user-avatars-container">
-      <%= image_tag("jj-avatar.png", class: "user-avatar") %>
-      <%= image_tag("jh-avatar.png", class: "user-avatar") %>
-      <%= image_tag("tt-avatar.png", class: "user-avatar") %>
-      <%= image_tag("tm-avatar.png", class: "user-avatar") %>
-      <%= image_tag("ds-avatar.png", class: "user-avatar") %>
+      <%= render(partial: 'users/user', collection: @project.users, cached: true) %>
     </div>
     <div class="project-resources-container">
 
-      <div class="project-resource-card">
-        <%= link_to(project_documents_path(@project), class: "document-resource-card-link") do %>
-          <h3 class="project-resource-card-header">Docs & Files</h3>
+      <%# You get the Docs & Files project tool by default with every project %>
+      <div class="project-tool-card">
+        <%= link_to(project_documents_path(@project), class: "project-tool-link") do %>
+          <h3 class="project-tool-card-header">Docs & Files</h3>
           <hr/>
-          <div class="documents-container">
+          <div class="project-tool-contents-preview">
             <div class="document">
               <span class="icon is-medium">
                 <i class="fas fa-2x fa-file-alt"></i>
@@ -30,15 +27,8 @@
         <% end %>
       </div>
 
-      <div class="project-resource-card">
-        <a href="https://github.com/jhunschejones/Everest#everest" target="_blank" class="document-resource-card-link">
-          <h3 class="project-resource-card-header">The Code</h3>
-          <hr/>
-          <div class="documents-container">
-              <%= image_tag("the-code.png", class: "the-code-image") %>
-          </div>
-        </a>
-      </div>
+      <%# Custom project tools can be added on a per-project basis %>
+      <%= render(partial: 'project_tools/project_tool', collection: @project.project_tools.sort_by(&:created_at), cached: true) %>
     </div>
 
     <h1 class="activities-title">Project Activity</h1>

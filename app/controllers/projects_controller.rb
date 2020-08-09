@@ -34,6 +34,6 @@ class ProjectsController < ApplicationController
   end
 
   def set_project
-    @project = Project.includes(:activities).find(params[:id])
+    @project = Project.includes(:project_tools, activities: [:user]).find(params[:id])
   end
 end

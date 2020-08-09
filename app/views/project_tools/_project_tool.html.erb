@@ -1,0 +1,13 @@
+<div class="project-tool-card">
+  <%= link_to(project_tool.link, class: "project-tool-link", target: "_blank") do %>
+    <h3 class="project-tool-card-header"><%= project_tool.name %></h3>
+    <hr/>
+    <div class="project-tool-contents-preview">
+      <% if project_tool.name == "The Code" %>
+        <%= image_tag("the-code.png", class: "the-code-image") %>
+      <% else %>
+        <%= raw project_tool.content_preview %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
