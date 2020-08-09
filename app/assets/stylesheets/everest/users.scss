@@ -1,0 +1,22 @@
+.user-avatar {
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  background-color: #910bfe;
+  flex-shrink: 0;
+}
+
+.user-avatar-45 {
+  width: 45px;
+  height: 45px;
+  font-size: 1.3em;
+}
+
+.user-avatar-35 {
+  height: 35px;
+  width: 35px;
+  font-size: 1em;
+}
