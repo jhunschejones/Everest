@@ -9,13 +9,14 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
 
   <body>
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" data-controller="main-nav">
       <div class="navbar-brand">
         <%= link_to(projects_path, class: "navbar-item menu-spacer") do %>
-          <%= image_tag("logo.png", class: "site-logo-image") %>
+          <%= image_tag("logo_120.png", class: "site-logo-image") %>
           <span class="navbar-title has-text-weight-semibold">Everest</span>
         <% end %>
 
