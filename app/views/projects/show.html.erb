@@ -11,8 +11,8 @@
     </div>
     <div class="project-resources-container">
 
-      <%= link_to(project_documents_path(@project), class: "project-documents-link") do %>
-        <div class="project-resource-card">
+      <div class="project-resource-card">
+        <%= link_to(project_documents_path(@project), class: "document-resource-card-link") do %>
           <h3 class="project-resource-card-header">Docs & Files</h3>
           <hr/>
           <div class="documents-container">
@@ -27,19 +27,18 @@
               </span>
             </div>
           </div>
-        </div>
-      <% end %>
-
-      <div class="project-resource-card">
-        <h3 class="project-resource-card-header">The Code</h3>
-        <hr/>
-        <div class="documents-container">
-          <a href="https://github.com/jhunschejones/Everest#everest" target="_blank" class="github-link">
-            <%= image_tag("the-code.png", class: "the-code-image") %>
-          </a>
-        </div>
+        <% end %>
       </div>
 
+      <div class="project-resource-card">
+        <a href="https://github.com/jhunschejones/Everest#everest" target="_blank" class="document-resource-card-link">
+          <h3 class="project-resource-card-header">The Code</h3>
+          <hr/>
+          <div class="documents-container">
+              <%= image_tag("the-code.png", class: "the-code-image") %>
+          </div>
+        </a>
+      </div>
     </div>
 
     <h1 class="activities-title">Project Activity</h1>
