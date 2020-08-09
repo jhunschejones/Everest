@@ -82,6 +82,9 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      .project-documents-link {
+        color: $dark-text-color;
+      }
       .project-resource-card {
         padding: 20px;
         height: 245px;
@@ -98,6 +101,9 @@
         .documents-container {
           display: flex;
           justify-content: center;
+          .github-link {
+            margin-top: -6px;
+          }
           .document {
             height: 105px;
             width: 80px;

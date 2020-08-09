@@ -10,41 +10,43 @@
       <%= image_tag("ds-avatar.png", class: "user-avatar") %>
     </div>
     <div class="project-resources-container">
-      <div class="project-resource-card">
-        <h3 class="project-resource-card-header">Docs & Files</h3>
-        <hr/>
-        <div class="documents-container">
-          <div class="document">
-            <span class="icon is-medium">
-              <i class="fas fa-2x fa-file-alt"></i>
-            </span>
-          </div>
-          <div class="document">
-            <span class="icon is-medium">
-              <i class="fas fa-2x fa-file-alt"></i>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="project-resource-card">
-        <h3 class="project-resource-card-header">Resume</h3>
-        <hr/>
-        <div class="documents-container">
-          <div class="document">
-            <p><small>Resume</small></p>
-          </div>
-          <div class="document">
-            <p><small>Cover letter</small></p>
+
+      <%= link_to(project_documents_path(@project), class: "project-documents-link") do %>
+        <div class="project-resource-card">
+          <h3 class="project-resource-card-header">Docs & Files</h3>
+          <hr/>
+          <div class="documents-container">
+            <div class="document">
+              <span class="icon is-medium">
+                <i class="fas fa-2x fa-file-alt"></i>
+              </span>
+            </div>
+            <div class="document">
+              <span class="icon is-medium">
+                <i class="fas fa-2x fa-file-alt"></i>
+              </span>
+            </div>
           </div>
         </div>
+      <% end %>
+
+      <div class="project-resource-card">
+        <h3 class="project-resource-card-header">The Code</h3>
+        <hr/>
+        <div class="documents-container">
+          <a href="https://github.com/jhunschejones/Everest#everest" target="_blank" class="github-link">
+            <%= image_tag("the-code.png", class: "the-code-image") %>
+          </a>
+        </div>
       </div>
+
     </div>
 
     <h1 class="activities-title">Project Activity</h1>
     <div class="activities-timeline">
       <% @activities_by_month_and_year.each do |month_and_year, activities| %>
         <h2 class="activity-month-header"><%= month_and_year %></h2>
-        <%= render(activities, locals: { direction: cycle("left", "right") }) %>
+        <%= render(partial: 'activities/activity', collection: activities, locals: { direction: cycle("left", "right") }, cached: true) %>
       <% end %>
     </div>
   </div>
