@@ -24,11 +24,11 @@ class ProjectToolsController < ApplicationController
   private
 
   def project_tool_params
-    params.require(:project_tool).permit(:name, :link, :content_preview)
+    params.require(:project_tool).permit(:name, :link, :image_name, :content_preview)
   end
 
   def set_project_and_project_tool
-    @activity = Activity.find(params[:id])
+    @project_tool = ProjectTool.find(params[:id])
     @project = Project.find(params[:project_id])
   end
 end

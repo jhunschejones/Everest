@@ -14,6 +14,11 @@
       </div>
 
       <div class="field">
+        <%= f.label :image_name %>
+        <%= f.text_field :image_name, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
         <%= f.label :content_preview %>
         <%= f.text_area :content_preview, autocomplete: 'off', class: "textarea" %>
       </div>

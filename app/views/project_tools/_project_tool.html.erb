@@ -3,8 +3,8 @@
     <h3 class="project-tool-card-header"><%= project_tool.name %></h3>
     <hr/>
     <div class="project-tool-contents-preview">
-      <% if project_tool.name == "The Code" %>
-        <%= image_tag("the-code.png", class: "the-code-image") %>
+      <% if asset_exists?(project_tool.image_name) %>
+        <%= image_tag(project_tool.image_name, class: "project-tool-image") %>
       <% else %>
         <%= raw project_tool.content_preview %>
       <% end %>
