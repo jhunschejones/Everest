@@ -33,7 +33,7 @@ class ActivitiesController < ApplicationController
 
   def update
     @activity.update(activity_params)
-    redirect_to project_activities_path(@project)
+    redirect_to project_path(@project)
   end
 
   private
