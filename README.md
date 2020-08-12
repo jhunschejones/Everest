@@ -1,6 +1,11 @@
 # Everest
 Everest is my interactive job-application app for Basecamp. It pays homage to the classic Basecamp 3 web UI design, and provides an easy way to access recent content I've created.  As a supplement to the copy in the application itself, this README will help the reader sift through the myriad of GitHub projects I've worked on since the fall of 2017.
 
+## Contents
+1. [A brief tour of historical repos in my GitHub and their place in my journey](https://github.com/jhunschejones/Everest#from-the-beginning)
+2. [More recent projects demonstrating familiarity with Ruby on Rails and good web development habits](https://github.com/jhunschejones/Everest#notable-projects)
+3. [Everest key features and future improvements](https://github.com/jhunschejones/Everest#everest-1)
+
 ## From the beginning
 After googling "what software language for web development" or something to that extent in the fall of 2017, I found myself working through a couple books by Michael Hartl and Zed Shaw and falling head over heels into the world of Ruby and Ruby on Rails. My first ever coding project is a CLI text adventure game called [Rangor](https://github.com/jhunschejones/Rangor) that I built for my wife who is a fan of any story about small animals.
 
@@ -14,11 +19,11 @@ In 2019 I was hired as an Associate Software Engineer into New Relic's Ignite pr
 
 ## Notable projects
 Over the last year + I have pushed my Ruby on Rails and web development skills to new levels. Some projects that I'm incredibly proud of include:
+* [Music Like You Mean It](https://github.com/jhunschejones/Music-Like-You-Mean-It) - A full stack Ruby on Rails CMS and blog for managing online teaching content I created for training aspiring music producers
+* [Studio Project Manager](https://github.com/jhunschejones/Studio-Project-Manager) - A Basecamp-inspired, Ruby on Rails + Stimulus project management application for managing recording projects I was working on with clients in my home studio
+* [Rails Game](https://github.com/jhunschejones/Rails-Game) -  A full stack Ruby on Rails application using ActionCable for a customizable, realtime turn / dice game *(turned out to be valuable during quarantine!)*
+* [To-Love-Roo-2](https://github.com/jhunschejones/To-Love-Roo-2) -  A full stack Sinatra app I use to leave surprise notes for my wife during busy work days
 * [Counseling Book Tags](https://github.com/jhunschejones/Counseling-Book-Tags) - A full stack Rails + Stimulus app for my wife's graduate school cohort, allowing her classmates and her to share counseling book resources
- * [Studio Project Manager](https://github.com/jhunschejones/Studio-Project-Manager) - A Basecamp-inspired, Ruby on Rails + Stimulus project management application for managing recording projects I was working on with clients in my home studio
- * [Rails Game](https://github.com/jhunschejones/Rails-Game) -  A full stack Ruby on Rails application using ActionCable for a customizable, realtime turn / dice game *(turned out to be valuable during quarantine!)*
- * [To-Love-Roo-2](https://github.com/jhunschejones/To-Love-Roo-2) -  A full stack Sinatra app I use to leave surprise notes for my wife during busy work days
- * [Music Like You Mean It](https://github.com/jhunschejones/Music-Like-You-Mean-It) - A full stack Ruby on Rails CMS and blog for managing online teaching content I created for training aspiring music producers
 
 ## Everest
 And that brings us here, to Everest! This is a small-scale Basecamp 3 replica that I put together in spare moments scavenged over less two weeks in order to demonstrate both a bit of my Rails familiarity, and as a creative way to pull together relevant artifacts for interviewers.
