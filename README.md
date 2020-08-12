@@ -14,11 +14,11 @@ In 2019 I was hired as an Associate Software Engineer into New Relic's Ignite pr
 
 ## Notable projects
 Over the last year + I have pushed my Ruby on Rails and web development skills to new levels. Some projects that I'm incredibly proud of include:
-	* [Counseling Book Tags](https://github.com/jhunschejones/Counseling-Book-Tags) - A full stack Rails + Stimulus app for my wife's graduate school cohort, allowing her classmates and her to share counseling book resources
-	* [Studio Project Manager](https://github.com/jhunschejones/Studio-Project-Manager) - A Basecamp-inspired, Ruby on Rails + Stimulus project management application for managing recording projects I was working on with clients in my home studio
-	* [Rails Game](https://github.com/jhunschejones/Rails-Game) -  A full stack Ruby on Rails application using ActionCable for a customizable, realtime turn / dice game *(turned out to be valuable during quarantine!)*
-	* [To-Love-Roo-2](https://github.com/jhunschejones/To-Love-Roo-2) -  A full stack Sinatra app I use to leave surprise notes for my wife during busy work days
-	* [Music Like You Mean It](https://github.com/jhunschejones/Music-Like-You-Mean-It) - A full stack Ruby on Rails CMS and blog for managing online teaching content I created for training aspiring music producers
+* [Counseling Book Tags](https://github.com/jhunschejones/Counseling-Book-Tags) - A full stack Rails + Stimulus app for my wife's graduate school cohort, allowing her classmates and her to share counseling book resources
+ * [Studio Project Manager](https://github.com/jhunschejones/Studio-Project-Manager) - A Basecamp-inspired, Ruby on Rails + Stimulus project management application for managing recording projects I was working on with clients in my home studio
+ * [Rails Game](https://github.com/jhunschejones/Rails-Game) -  A full stack Ruby on Rails application using ActionCable for a customizable, realtime turn / dice game *(turned out to be valuable during quarantine!)*
+ * [To-Love-Roo-2](https://github.com/jhunschejones/To-Love-Roo-2) -  A full stack Sinatra app I use to leave surprise notes for my wife during busy work days
+ * [Music Like You Mean It](https://github.com/jhunschejones/Music-Like-You-Mean-It) - A full stack Ruby on Rails CMS and blog for managing online teaching content I created for training aspiring music producers
 
 ## Everest
 And that brings us here, to Everest! This is a small-scale Basecamp 3 replica that I put together in spare moments scavenged over less two weeks in order to demonstrate both a bit of my Rails familiarity, and as a creative way to pull together relevant artifacts for interviewers.
