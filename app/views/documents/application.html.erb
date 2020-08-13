@@ -17,8 +17,10 @@
   <div class="project-document-card">
     <div class="document">
       <h1 class="project-document-title"><%= @document.title %></h1>
-      <p class="document-download has-text-link">
-        <a href="/Jones<%= @document.title.split.join %>.pdf" download>Download</a>
+      <p>
+        <a class="has-text-link" href="/Jones<%= @document.title.split.join %>.pdf" download>
+          Download
+        </a>
       </p>
       <div class="project-document-content">
         <%= @document.content %>
