@@ -11,8 +11,12 @@ class User < ApplicationRecord
   has_many :projects, through: :user_projects
   has_many :activities, dependent: :destroy
 
-  def is_admin?
-    site_role == SITE_ADMIN
+  # NOTE:
+  # This method should only be used _inside_ more specifically named methods that control
+  # user access to a specific feature or action, i.e. user.can_edit_project?(project).
+  # Never just check a user role directly to decide if a feature should be shown!
+  def is_admin_on?(project)
+    user_projects.filter { |up| up.project_id == project.id }.first&.role == UserProject::ADMIN_ROLE
   end
 
   # https://github.com/basecamp/name_of_person/blob/master/lib/name_of_person/person_name.rb#L51-L54

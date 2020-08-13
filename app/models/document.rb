@@ -7,4 +7,11 @@ class Document < ApplicationRecord
 
   RESUME = "Resume".freeze
   COVER_LETTER = "Cover Letter".freeze
+  VALID_APPLICATION_DOCS = [Document::RESUME, Document::COVER_LETTER]
+
+  def self.for_application(document_title)
+    formatted_document_title = document_title.strip.titleize
+    return nil unless VALID_APPLICATION_DOCS.include?(formatted_document_title)
+    Document.find_by(title: formatted_document_title)
+  end
 end

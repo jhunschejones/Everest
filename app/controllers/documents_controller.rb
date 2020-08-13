@@ -25,11 +25,7 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    @document = Document.create(
-      document_params
-        .except(:created_at)
-        .merge({ project_id: params[:project_id] })
-    )
+    @document = Document.create(document_params.merge({ project_id: params[:project_id] }))
     redirect_to project_document_path(@document.project, @document)
   end
 
@@ -39,14 +35,8 @@ class DocumentsController < ApplicationController
   end
 
   def application
-    application_document_title = params[:document].strip.titleize
-    if application_document_title == Document::RESUME
-      @document = Document.find_by(title: Document::RESUME)
-    elsif application_document_title == Document::COVER_LETTER
-      @document = Document.find_by(title: Document::COVER_LETTER)
-    else
-      redirect_to projects_path
-    end
+    @document = Document.for_application(params[:document])
+    redirect_to projects_path unless @document.present?
   end
 
   private
