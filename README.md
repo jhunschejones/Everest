@@ -37,5 +37,7 @@ Viewers of the site will also notice that it adapts well on mobile screens as we
 
 For interactive elements like the flashes and mobile dropdown menu, I used Stimulus for a clean way to organize this code. Other than that, the entire site is HTML to the core, just how I like it! To keep the site feeling responsive, also I did a bit of view caching with Redis to improve the pages that need to render lists of elements repeatedly.
 
+Even on project-scale applications, I like to default to secure data storage whenever possible. User names and email addresses are encrypted in the database to prevent personal data leaks should an attacker gain access to the database itself. I also don't consider important code to be fully functional until I have tests proving this is true. The app includes unit test coverage to a level that makes me comfortable deploying it to the internet. I do not shoot for 100% test coverage, but rather enough coverage that I know all the elements work the way I want them to.
+
 ### Future improvements
 It is my dream to work at Basecamp, and I plan to continue to expand this application for future application submissions if this first one isn't the right timing. The next step here is likely to expand out the user management tooling to allow users to sign up and create their own projects, or at least contribute to existing projects. I would also like to add more project tool categories, like maybe a chat or a to-do list _(the Basecamp 3 todo list is my favorite feature in the app!)_
