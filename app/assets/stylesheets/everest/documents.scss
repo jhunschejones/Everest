@@ -102,6 +102,19 @@
         margin-top: 20px;
         color: $dark-text-color;
         margin-bottom: 40px;
+        blockquote {
+          // use blockquote element to position resume sections
+          margin-top: 12px;
+          margin-left: -10px;
+          border-left: none;
+        }
+        ul {
+          padding: 6px 0px 0px 6px;
+          li::before {
+            // remove before content added by trix
+            display: none;
+          }
+        }
       }
     }
   }
