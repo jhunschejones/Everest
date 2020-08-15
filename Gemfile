@@ -8,6 +8,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'redis', '~> 4.0'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
+gem 'closure-compiler'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 
