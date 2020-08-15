@@ -2,9 +2,9 @@
 Everest is my interactive job-application app for Basecamp. It pays homage to the classic Basecamp 3 web UI design and provides an easy way to access recent content I have created. As a supplement to the copy in the application itself, this README will help the reader sift through the myriad of GitHub projects I have worked on since the fall of 2017.
 
 ## Contents
- 1. [A brief tour of historical repos in my GitHub and their place in my journey](https://github.com/jhunschejones/Everest#from-the-beginning) 
- 2. [More recent projects demonstrating familiarity with Ruby on Rails and good web development habits](https://github.com/jhunschejones/Everest#notable-projects) 
- 3. [Everest key features and future improvements](https://github.com/jhunschejones/Everest#everest-1) 
+ 1. [A brief tour of historical repos in my GitHub and an explanation of their place in my journey](https://github.com/jhunschejones/Everest#from-the-beginning)
+ 2. [More recent projects demonstrating familiarity with Ruby on Rails and good web development habits](https://github.com/jhunschejones/Everest#notable-projects)
+ 3. [Everest: key features and future improvements](https://github.com/jhunschejones/Everest#everest-1)
 
 ## From the beginning
 After googling "what software language do I learn for web development," or something to that extent in the fall of 2017, I found myself in possession of a two books by Michael Hartl and Zed Shaw which quickly lead me down the rabbit hole into the amazing world of Ruby and Ruby on Rails. My first ever coding project was a CLI, text adventure game called [Rangor](https://github.com/jhunschejones/Rangor) that I built for my partner who is a fan of all stories involving small animals.
