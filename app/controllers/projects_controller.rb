@@ -8,6 +8,11 @@ class ProjectsController < ApplicationController
 
   def show
     @activities_by_month_and_year = @project.activities.ordered.group_by(&:month_and_year)
+    @recent_documents = Document
+      .for_documents_list
+      .where(project: @project)
+      .order({ updated_at: :desc })
+      .limit(2)
   end
 
   def new

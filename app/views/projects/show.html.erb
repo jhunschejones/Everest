@@ -12,16 +12,7 @@
         <%= link_to(project_documents_path(@project), class: "project-tool-link") do %>
           <h3 class="project-tool-card-header">Docs & Files</h3>
           <div class="project-tool-contents-preview">
-            <div class="document">
-              <span class="icon is-medium">
-                <i class="fas fa-2x fa-file-alt"></i>
-              </span>
-            </div>
-            <div class="document">
-              <span class="icon is-medium">
-                <i class="fas fa-2x fa-file-alt"></i>
-              </span>
-            </div>
+            <%= render(partial: 'documents/document_preview', collection: @recent_documents, as: :document, cached: true) %>
           </div>
         <% end %>
       </div>

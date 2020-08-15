@@ -1,0 +1,8 @@
+<div class="document-preview">
+  <p class="document-title">
+    <strong><%= document.title %></strong>
+  </p>
+  <div class="document-content">
+    <%= raw truncate_action_text(rich_text: document.content, paragraphs: 4) %>
+  </div>
+</div>
