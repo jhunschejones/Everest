@@ -87,16 +87,18 @@
         line-height: 1.2;
         color: $dark-text-color;
       }
-      .project-document-content {
-        margin-top: 20px;
-        color: $dark-text-color;
-        margin-bottom: 40px;
+      .application-document-content {
         blockquote {
           // use blockquote element to position resume sections
           margin-top: 12px;
           margin-left: -10px;
           border-left: none;
         }
+      }
+      .project-document-content {
+        margin-top: 20px;
+        color: $dark-text-color;
+        margin-bottom: 40px;
         ul {
           padding: 6px 0px 0px 6px;
           li::before {

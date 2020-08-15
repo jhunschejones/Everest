@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   skip_before_action :authenticate_user, only: [:index, :show, :application]
-  before_action :set_document_and_project, except: [:index, :new, :create, :application]
+  before_action :set_document_and_project, only: [:show, :edit, :update]
 
   def index
     @documents =
@@ -14,6 +14,7 @@ class DocumentsController < ApplicationController
   end
 
   def show
+    return redirect_to application_path(document: @document.title) if @document.is_for_application?
   end
 
   def new
@@ -37,6 +38,12 @@ class DocumentsController < ApplicationController
   def application
     @document = Document.for_application(params[:document])
     redirect_to projects_path unless @document.present?
+  end
+
+  def application_edit
+    @document = Document.for_application(params[:document])
+    return redirect_to projects_path unless @document.present?
+    redirect_to edit_project_document_path(@document.project_id, @document.id)
   end
 
   private

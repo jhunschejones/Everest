@@ -14,4 +14,8 @@ class Document < ApplicationRecord
     return nil unless VALID_APPLICATION_DOCS.include?(formatted_document_title)
     Document.find_by(title: formatted_document_title)
   end
+
+  def is_for_application?
+    VALID_APPLICATION_DOCS.include?(title.strip.titleize)
+  end
 end

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   get "/application" => "documents#application"
+  get "/application/edit" => "documents#application_edit"
 
   %w( 404 422 500 503 ).each do |code|
     get code, :to => "static_pages#error", :code => code

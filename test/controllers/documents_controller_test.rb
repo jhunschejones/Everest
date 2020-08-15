@@ -48,6 +48,24 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
       assert_response :success
       assert_select "h1.project-document-title", documents(:blog_post).title
     end
+
+    describe "when document is for application" do
+      it "redirects resume to application document page" do
+        get project_document_path(projects(:everest), documents(:resume))
+        assert_redirected_to application_path(document: "Resume")
+        follow_redirect!
+        assert_response :success
+        assert_select "h1.project-document-title", documents(:resume).title
+      end
+
+      it "redirects cover letter to application document page" do
+        get project_document_path(projects(:everest), documents(:cover_letter))
+        assert_redirected_to application_path(document: "Cover Letter")
+        follow_redirect!
+        assert_response :success
+        assert_select "h1.project-document-title", documents(:cover_letter).title
+      end
+    end
   end
 
   describe "GET #new" do
@@ -177,6 +195,52 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
     it "redirects to the project path for unrecognized job application document" do
       get application_path, params: { document: "Shopping List" }
       assert_redirected_to projects_path
+    end
+  end
+
+  describe "GET #application_edit" do
+    describe "when no user is logged in" do
+      it "redirects to the login page page" do
+        get application_edit_path, params: { document: "Cover Letter" }
+        assert_redirected_to login_path
+      end
+    end
+
+    describe "when an admin user is logged in" do
+      before do
+        login_as(users(:project_admin))
+      end
+
+      describe "when the document is not for application" do
+        it "redirects to the projects path" do
+          get application_edit_path, params: { document: "Shopping List" }
+          assert_redirected_to projects_path
+        end
+      end
+
+      describe "when the document is for application" do
+        it "shows the edit project document page for the resume" do
+          get application_edit_path, params: { document: "Resume" }
+          assert_redirected_to edit_project_document_path(projects(:everest), documents(:resume))
+          follow_redirect!
+          assert_response :success
+          assert_select "h2.title", "Edit document"
+          assert_select "input" do
+            assert_select "[value=?]", documents(:resume).title
+          end
+        end
+
+        it "shows the edit project document page for the cover letter" do
+          get application_edit_path, params: { document: "Cover Letter" }
+          assert_redirected_to edit_project_document_path(projects(:everest), documents(:cover_letter))
+          follow_redirect!
+          assert_response :success
+          assert_select "h2.title", "Edit document"
+          assert_select "input" do
+            assert_select "[value=?]", documents(:cover_letter).title
+          end
+        end
+      end
     end
   end
 
