@@ -3,7 +3,7 @@
     <h1 class="project-name"><%= @project.name %></h1>
     <p class="project-description"><%= @project.description %>
     <div class="user-avatars-container">
-      <%= render(partial: 'users/user', collection: @project.users, locals: { size: 35 }, cached: true) %>
+      <%= render(partial: 'users/small_user', collection: @project.users, as: :user, cached: true) %>
     </div>
     <div class="project-resources-container">
 

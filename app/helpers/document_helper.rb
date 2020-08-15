@@ -1,5 +1,7 @@
 module DocumentHelper
   def truncate_action_text(rich_text:, paragraphs: 1)
+    return nil if rich_text.body.nil?
+
     rich_text_paragraphs = Nokogiri::HTML::DocumentFragment
       .parse(rich_text.body.to_html)
       .children
