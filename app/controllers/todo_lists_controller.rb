@@ -3,7 +3,7 @@ class TodoListsController < ApplicationController
   before_action :set_todo_list_and_project, only: [:show, :edit, :update]
 
   def index
-    @todo_lists = TodoList.includes(todo_items: [:assigned_to]).all
+    @todo_lists = TodoList.includes(todo_items: [:assigned_to]).ordered.all
     @project = Project.find(params[:project_id])
   end
 
@@ -32,7 +32,7 @@ class TodoListsController < ApplicationController
   private
 
   def todo_list_params
-    params.require(:todo_list).permit(:name, :created_at)
+    params.require(:todo_list).permit(:name, :order, :created_at)
   end
 
   def set_todo_list_and_project

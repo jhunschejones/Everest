@@ -9,6 +9,11 @@
       </div>
 
       <div class="field">
+        <%= f.label :order %>
+        <%= f.text_field :order, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
         <%= f.label :created_at %><br />
         <%= f.date_select :created_at, use_short_month: true, order: [:month, :day, :year], start_year: 5.years.ago.year %>
         <small class="has-text-grey-light">(USA Pacific Time)</small>

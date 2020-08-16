@@ -28,7 +28,7 @@
       </div>
 
       <div class="todo-items">
-        <%= render(partial: 'todo_items/todo_item', collection: @todo_list.todo_items, locals: { project: @project }, cached: true) %>
+        <%= render(partial: 'todo_items/todo_item', collection: @todo_list.todo_items.sort_by(&:order).sort_by(&:created_at), locals: { project: @project }, cached: true) %>
       </div>
     </div>
   </div>

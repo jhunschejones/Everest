@@ -2,7 +2,7 @@ class TodoList < ApplicationRecord
   belongs_to :project
   has_many :todo_items
 
-  scope :ordered, -> { order({ created_at: :desc }) }
+  scope :ordered, -> { order({ order: :asc, created_at: :desc }) }
 
   def completion_chart_data
     return nil if todo_items.empty?
