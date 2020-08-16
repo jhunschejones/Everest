@@ -1,0 +1,16 @@
+<div class="project-todo-lists-container">
+  <div class="project-breadcrumb">
+    <%= link_to(project_path(@project), class: "project-breadcrumb-link") do %>
+      <span class="icon is-small has-text-grey-lighter">
+        <i class="fas fa-th-large"></i>
+      </span>
+      <span class="has-text-link link-text"><%= @project.name %></span>
+    <% end %>
+  </div>
+  <div class="project-todo-lists-card">
+    <h1 class="project-todo-lists-title">To-dos</h1>
+    <div class="project-todo-lists">
+      <%= render(partial: 'todo_lists/todo_list', collection: @todo_lists, locals: { project: @project }, cached: true) %>
+    </div>
+  </div>
+</div>

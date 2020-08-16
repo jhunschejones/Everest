@@ -13,6 +13,11 @@ class ProjectsController < ApplicationController
       .where(project: @project)
       .order({ updated_at: :desc })
       .limit(2)
+    @recent_todo_lists = TodoList
+      .includes(todo_items: [:assigned_to])
+      .where(project: @project)
+      .order({ updated_at: :desc })
+      .limit(2)
   end
 
   def new

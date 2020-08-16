@@ -1,0 +1,21 @@
+<div class="todo-list">
+  <div class="todo-list-header-container">
+    <% if todo_list.completion_chart_data.present? %>
+      <div class="todo-list-pie-chart">
+        <%= pie_chart(todo_list.completion_chart_data, id: "todo-list-#{todo_list.id}", height: "22px", width: "22px") %>
+      </div>
+    <% end %>
+    <div class="todo-list-header-container-right">
+      <% if todo_list.completion_chart_data.present? %>
+        <p class="has-text-grey completed-count todo-list-<%= todo_list.id %>">
+          <%= todo_list.completion_chart_data[:complete] %> / <%= todo_list.todo_items.size %> completed
+        </p>
+      <% end %>
+      <%= link_to(todo_list.name, project_todo_list_path(@project, todo_list), class: "todo-list-link has-text-link") %>
+    </div>
+  </div>
+
+  <div class="todo-items">
+    <%= render(partial: 'todo_items/todo_item', collection: todo_list.todo_items, locals: { project: @project }, cached: true) %>
+  </div>
+</div>

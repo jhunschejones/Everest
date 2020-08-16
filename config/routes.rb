@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   resources :activities, only: [:index]
 
   resources :projects, except: [:destroy] do
+    resources :project_tools, only: [:new, :edit, :create, :update]
     resources :activities, except: [:index, :show, :destroy]
     resources :documents, except: [:destroy]
-    resources :project_tools, only: [:new, :edit, :create, :update]
+    resources :todo_lists, except: [:destroy] do
+      resources :todo_items, except: [:show, :index, :destroy]
+    end
   end
 
   get "/application" => "documents#application"

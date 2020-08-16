@@ -1,0 +1,49 @@
+<div class="edit-resource">
+  <div class="edit-resource-form-container">
+    <h2 class="title is-4">Edit To-do Item</h2>
+
+    <%= form_with(model: @todo_item, local: true, url: project_todo_list_todo_item_path(@project, @todo_list, @todo_item)) do |f| %>
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_field :description, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :notes %>
+        <%= f.text_area :notes, autocomplete: 'off', class: "textarea" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :assigned_to %>
+        <%= f.select :assigned_to, options_from_collection_for_select(@users, "id", "name") %>
+      </div>
+
+      <div class="field">
+        <%= f.label :order %>
+        <%= f.text_field :order, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.check_box :is_complete %>
+        <%= f.label "completed" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :due_on %><br />
+        <%= f.date_select :due_on, use_short_month: true, order: [:month, :day, :year], start_year: 5.years.ago.year %>
+        <small class="has-text-grey-light">(USA Pacific Time)</small>
+      </div>
+
+      <div class="field">
+        <%= f.label :created_at %><br />
+        <%= f.date_select :created_at, use_short_month: true, order: [:month, :day, :year], start_year: 5.years.ago.year %>
+        <small class="has-text-grey-light">(USA Pacific Time)</small>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Update", class: "button is-info" %>
+        <%= link_to "Back", project_path(@project), class: "button is-info is-outlined" %>
+      </div>
+    <% end %>
+  </div>
+</div>

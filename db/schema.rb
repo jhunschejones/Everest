@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_035246) do
+ActiveRecord::Schema.define(version: 2020_08_16_005838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,29 @@ ActiveRecord::Schema.define(version: 2020_08_13_035246) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "todo_items", force: :cascade do |t|
+    t.text "description", null: false
+    t.text "notes"
+    t.boolean "is_complete", default: false
+    t.datetime "due_on"
+    t.integer "order", default: 0
+    t.bigint "todo_list_id", null: false
+    t.bigint "assigned_to_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["assigned_to_id"], name: "index_todo_items_on_assigned_to_id"
+    t.index ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
+  end
+
+  create_table "todo_lists", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "order", default: 0
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_todo_lists_on_project_id"
+  end
+
   create_table "user_projects", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "project_id", null: false
@@ -108,6 +131,9 @@ ActiveRecord::Schema.define(version: 2020_08_13_035246) do
   add_foreign_key "activities", "users", on_delete: :cascade
   add_foreign_key "documents", "projects", on_delete: :cascade
   add_foreign_key "project_tools", "projects", on_delete: :cascade
+  add_foreign_key "todo_items", "todo_lists", on_delete: :cascade
+  add_foreign_key "todo_items", "users", column: "assigned_to_id", on_delete: :cascade
+  add_foreign_key "todo_lists", "projects", on_delete: :cascade
   add_foreign_key "user_projects", "projects", on_delete: :cascade
   add_foreign_key "user_projects", "users", on_delete: :cascade
 end

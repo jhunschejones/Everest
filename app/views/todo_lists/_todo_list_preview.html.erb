@@ -1,0 +1,21 @@
+<div class="todo-list-preview">
+  <h3 class="todo-list-preview-name">
+    <strong><%= todo_list.name %></strong>
+  </h3>
+
+  <div class="todo-items-preivew">
+    <% todo_list.todo_items[0..1].each do |todo_item| %>
+      <div class="todo-item-preview">
+        <span class="todo-item-preview-description">
+          <%= todo_item.description %>
+        </span>
+        <span class="todo-item-preview-assigned-to">
+          <span class="user-avatar preview-user-avatar"><%= todo_item.assigned_to.initials %></span>
+          <span class="has-text-grey assigned-to-name">
+            <small><%= todo_item.assigned_to.firstname_last_initial %></small>
+          </span>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>

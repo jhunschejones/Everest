@@ -17,6 +17,16 @@
         <% end %>
       </div>
 
+      <%# You get the To-dos project tool by default with every project %>
+      <div class="project-tool-card">
+        <%= link_to(project_todo_lists_path(@project), class: "project-tool-link") do %>
+          <h3 class="project-tool-card-header">To-dos</h3>
+          <div class="todo-list-previews">
+            <%= render(partial: 'todo_lists/todo_list_preview', collection: @recent_todo_lists, as: :todo_list, cached: true) %>
+          </div>
+        <% end %>
+      </div>
+
       <%# Custom project tools can be added on a per-project basis %>
       <%= render(partial: 'project_tools/project_tool', collection: @project.project_tools.sort_by(&:created_at), cached: true) %>
     </div>

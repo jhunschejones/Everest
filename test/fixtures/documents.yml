@@ -8,6 +8,10 @@ blog_post:
   title: The very first blog blog_post
   project: everest
 
+blog_post_two:
+  title: Another blog post where I'd like to register my opinion on a topic
+  project: everest
+
 resume:
   title: Resume
   project: everest

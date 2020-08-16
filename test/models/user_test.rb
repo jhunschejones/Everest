@@ -18,18 +18,34 @@ class UserTest < ActiveSupport::TestCase
   end
 
   describe "#initials" do
-    it "produces expected string from two word name" do
-      assert_equal "CF", users(:project_admin).initials
-    end
-
     it "produces expected string from one word name" do
       users(:project_admin).update(name: "Carl")
       assert_equal "C", users(:project_admin).initials
     end
 
+    it "produces expected string from two word name" do
+      assert_equal "CF", users(:project_admin).initials
+    end
+
     it "produces expected string from three word name" do
       users(:project_admin).update(name: "Carl The Fox")
       assert_equal "CTF", users(:project_admin).initials
+    end
+  end
+
+  describe "#firstname_last_initial" do
+    it "produces expected string from one word name" do
+      users(:project_admin).update(name: "Carl")
+      assert_equal "Carl", users(:project_admin).firstname_last_initial
+    end
+
+    it "produces expected string from two word name" do
+      assert_equal "Carl F.", users(:project_admin).firstname_last_initial
+    end
+
+    it "produces expected string from three word name" do
+      users(:project_admin).update(name: "Carl The Fox")
+      assert_equal "Carl F.", users(:project_admin).firstname_last_initial
     end
   end
 end

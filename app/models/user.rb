@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :user_projects, dependent: :destroy
   has_many :projects, through: :user_projects
   has_many :activities, dependent: :destroy
+  has_many :todo_items, foreign_key: :user_id, dependent: :destroy
 
   # NOTE:
   # This method should only be used _inside_ more specifically named methods that control
@@ -22,5 +23,12 @@ class User < ApplicationRecord
   # https://github.com/basecamp/name_of_person/blob/master/lib/name_of_person/person_name.rb#L51-L54
   def initials
     name.remove(/(\(|\[).*(\)|\])/).scan(/([[:word:]])[[:word:]]*/i).join
+  end
+
+  def firstname_last_initial
+    @firstname_last_initial ||= begin
+      words_in_name = name.split
+      words_in_name.one? ? name : "#{words_in_name.first} #{words_in_name.last.first}."
+    end
   end
 end

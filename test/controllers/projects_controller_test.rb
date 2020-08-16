@@ -16,6 +16,16 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
       assert_response :success
       assert_select "h1.project-name", projects(:everest).name
     end
+
+    it "shows project document previews" do
+      get project_path(projects(:everest))
+      assert_select "div.document-preview", count: 2
+    end
+
+    it "shows project todo list previews" do
+      get project_path(projects(:everest))
+      assert_select "div.todo-item-preview", count: 2
+    end
   end
 
   describe "GET #new" do

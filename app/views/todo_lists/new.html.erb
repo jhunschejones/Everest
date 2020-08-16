@@ -1,0 +1,23 @@
+<div class="new-resource">
+  <div class="new-resource-form-container">
+    <h2 class="title is-4">New To-do List</h2>
+
+    <%= form_with(model: @todo_list, url: project_todo_lists_path(@project)) do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, autocomplete: 'off', class: "input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :created_at %><br />
+        <%= f.date_select :created_at, use_short_month: true, order: [:month, :day, :year], start_year: 5.years.ago.year %>
+        <small class="has-text-grey-light">(USA Pacific Time)</small>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Create", class: "button is-info" %>
+        <%= link_to "Back", project_path(@project), class: "button is-info is-outlined" %>
+      </div>
+    <% end %>
+  </div>
+</div>

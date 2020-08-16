@@ -1,0 +1,35 @@
+<div class="project-todo-list-container">
+  <div class="project-breadcrumb">
+    <%= link_to(project_path(@project), class: "project-breadcrumb-link") do %>
+      <span class="icon is-small has-text-grey-lighter">
+        <i class="fas fa-th-large"></i>
+      </span>
+      <span class="has-text-link link-text"><%= @project.name %></span>
+    <% end %>
+    <small>&nbsp;&#10095;&nbsp;</small>
+    <%= link_to("To-dos", project_todo_lists_path(@project), class: "has-text-link project-todo-lists-breadcrumb-link")%>
+  </div>
+  <div class="project-todo-list-card">
+    <div class="todo-list">
+      <div class="todo-list-header-container">
+        <% if @completion_chart_data.present? %>
+          <div class="todo-list-pie-chart">
+            <%= pie_chart(@completion_chart_data, id: "todo-list-#{@todo_list.id}") %>
+          </div>
+        <% end %>
+        <div class="todo-list-header-container-right">
+          <% if @completion_chart_data.present? %>
+            <p class="has-text-grey completed-count todo-list-<%= @todo_list.id %>">
+              <%= @completion_chart_data[:complete] %> / <%= @todo_list.todo_items.size %> completed
+            </p>
+          <% end %>
+          <h1 class="todo-list-title"><%= @todo_list.name %></h1>
+        </div>
+      </div>
+
+      <div class="todo-items">
+        <%= render(partial: 'todo_items/todo_item', collection: @todo_list.todo_items, locals: { project: @project }, cached: true) %>
+      </div>
+    </div>
+  </div>
+</div>

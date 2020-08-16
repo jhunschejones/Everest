@@ -134,7 +134,8 @@
       text-decoration: underline;
     }
   }
-  .project-documents-breadcrumb-link {
+  .project-documents-breadcrumb-link,
+  .project-todo-lists-breadcrumb-link {
     text-decoration: underline;
     @media screen and (max-width: 400px) {
       font-size: 0.85em;

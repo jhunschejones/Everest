@@ -1,0 +1,9 @@
+one:
+  description: "Do this item first"
+  todo_list: one
+  assigned_to: project_admin
+
+two:
+  description: "Do this item second"
+  todo_list: one
+  assigned_to: project_admin

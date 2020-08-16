@@ -1,0 +1,16 @@
+<div class="todo-item" data-controller="todo-item">
+  <%= form_with(model: todo_item, url: project_todo_list_todo_item_path(@project, todo_item.todo_list_id, todo_item), method: "patch", class: "todo-item-form", data: { target: "todo-item.form"}) do |f| %>
+    <%= f.check_box :is_complete, data: { action: "change->todo-item#toggle" }, class: "todo-item-checkbox" %>
+  <% end %>
+  <span class="todo-item-right-content">
+    <span class="todo-item-description"><%= todo_item.description %></span>
+    <span class="assigned-to-container">
+      <span class="todo-item-assigned-to">
+        <%= render(partial: 'users/micro_user', locals: { user: todo_item.assigned_to }, cache: true) %>
+        <span class="has-text-grey assigned-to-name">
+          <small><%= todo_item.assigned_to.firstname_last_initial %></small>
+        </span>
+      </span>
+    </span>
+  </span>
+</div>
