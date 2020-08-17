@@ -95,15 +95,31 @@ class TodoItemsControllerTest < ActionDispatch::IntegrationTest
 
   describe "PATCH #update" do
     describe "when no user is logged in" do
-      it "does not update the todo item record" do
-        assert_no_changes -> { TodoItem.find(todo_items(:one).id).description } do
+      describe "when responding to html request" do
+        it "does not update the todo item record" do
+          assert_no_changes -> { TodoItem.find(todo_items(:one).id).description } do
+            patch project_todo_list_todo_item_path(projects(:everest), todo_lists(:one), todo_items(:one)), params: { todo_item: { description: "Change the description" } }
+          end
+        end
+
+        it "redirects to the login page page" do
           patch project_todo_list_todo_item_path(projects(:everest), todo_lists(:one), todo_items(:one)), params: { todo_item: { description: "Change the description" } }
+          assert_redirected_to login_path
         end
       end
 
-      it "redirects to the login page page" do
-        patch project_todo_list_todo_item_path(projects(:everest), todo_lists(:one), todo_items(:one)), params: { todo_item: { description: "Change the description" } }
-        assert_redirected_to login_path
+      describe "when responding to js request" do
+        it "allows user to update todo item completed status" do
+          assert_changes -> { TodoItem.find(todo_items(:one).id).is_complete } do
+            patch project_todo_list_todo_item_path(projects(:everest), todo_lists(:one), todo_items(:one), format: :js), params: { todo_item: { is_complete: 1 } }
+          end
+        end
+
+        it "does not allow user to update other todo item attributes" do
+          assert_no_changes -> { TodoItem.find(todo_items(:one).id).description } do
+            patch project_todo_list_todo_item_path(projects(:everest), todo_lists(:one), todo_items(:one), format: :js), params: { todo_item: { description: "Change the description" } }
+          end
+        end
       end
     end
 
