@@ -86,9 +86,9 @@ class TodoItemsControllerTest < ActionDispatch::IntegrationTest
         assert_equal "My new todo item", TodoItem.last.description
       end
 
-      it "redirects to the project todo list page" do
+      it "redirects to the todo item details page" do
         post project_todo_list_todo_items_path(projects(:everest), todo_lists(:one)), params: { todo_item: { description: "My new todo item", assigned_to_id: users(:project_admin).id } }
-        assert_redirected_to project_todo_list_path(projects(:everest), todo_lists(:one))
+        assert_redirected_to project_todo_list_todo_item_path(projects(:everest), todo_lists(:one), TodoItem.last)
       end
     end
   end
@@ -120,9 +120,9 @@ class TodoItemsControllerTest < ActionDispatch::IntegrationTest
       end
 
       describe "when responding to html form update request" do
-        it "redirects to the project todo list page" do
+        it "redirects to the todo item details page" do
           patch project_todo_list_todo_item_path(projects(:everest), todo_lists(:one), todo_items(:one)), params: { todo_item: { description: "Change the description" } }
-          assert_redirected_to project_todo_list_path(projects(:everest), todo_lists(:one))
+          assert_redirected_to project_todo_list_todo_item_path(projects(:everest), todo_lists(:one), todo_items(:one))
         end
       end
 

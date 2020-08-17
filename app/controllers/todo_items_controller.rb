@@ -18,7 +18,7 @@ class TodoItemsController < ApplicationController
 
   def create
     @todo_item = TodoItem.create(todo_item_params.merge({ todo_list: @todo_list }))
-    redirect_to project_todo_list_path(@todo_list.project_id, @todo_list)
+    redirect_to project_todo_list_todo_item_path(@todo_list.project_id, @todo_list, @todo_item)
   end
 
   def update
@@ -28,7 +28,7 @@ class TodoItemsController < ApplicationController
     respond_to do |format|
       format.js
       format.html {
-        redirect_to project_todo_list_path(@todo_list.project_id, @todo_list)
+        redirect_to project_todo_list_todo_item_path(@todo_list.project_id, @todo_list, @todo_item)
       }
     end
   end

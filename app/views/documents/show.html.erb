@@ -12,7 +12,7 @@
   <div class="project-document-card">
     <div class="document">
       <p class="created-at has-text-grey-light">
-        <small>Created at <%= @document.created_at.localtime.strftime("%B %-d, %Y") %></small>
+        <small>Created on <%= @document.created_at.localtime.strftime("%B %-d, %Y") %></small>
       </p>
       <h1 class="project-document-title"><%= @document.title %></h1>
       <div class="project-document-content">

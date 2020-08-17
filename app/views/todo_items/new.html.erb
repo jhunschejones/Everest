@@ -15,7 +15,7 @@
 
       <div class="field">
         <%= f.label :assigned_to %>
-        <%= f.select :assigned_to_id, options_from_collection_for_select(@users, "id", "name") %>
+        <%= f.select :assigned_to_id, options_from_collection_for_select(@users, "id", "firstname_last_initial") %>
       </div>
 
       <div class="field">
