@@ -1,8 +1,11 @@
 class TodoItemsController < ApplicationController
   skip_before_action :authenticate_user, only: [:index, :show]
   before_action :set_todo_list
-  before_action :set_todo_item, only: [:edit, :update]
-  before_action :set_project, only: [:new, :edit]
+  before_action :set_todo_item, only: [:show, :edit, :update]
+  before_action :set_project, only: [:show, :new, :edit]
+
+  def show
+  end
 
   def new
     @todo_item = TodoItem.new

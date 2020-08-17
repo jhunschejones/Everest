@@ -105,29 +105,31 @@
     display: block;
     position: relative;
     margin-bottom: 9px;
-    color: $dark-text-color;
-    .todo-item-form {
-      position: absolute;
-      padding-top: 3px;
-      .todo-item-checkbox {
-        width: 20px;
-        height: 20px;
+    .todo-item-link {
+      color: $dark-text-color;
+      .todo-item-form {
+        position: absolute;
+        padding-top: 3px;
+        .todo-item-checkbox {
+          width: 20px;
+          height: 20px;
+        }
       }
-    }
-    .todo-item-right-content {
-      margin-left: 28px;
-      display: block;
-      .todo-item-description {
-        font-size: 1.1em;
-      }
-      .assigned-to-container {
-        bottom: 1px;
-        .todo-item-assigned-to {
-          margin-left: 7px;
-          display: inline-flex;
-          align-items: center;
-          .assigned-to-name {
-            margin-left: 5px;
+      .todo-item-right-content {
+        margin-left: 28px;
+        display: block;
+        .todo-item-description {
+          font-size: 1.1em;
+        }
+        .assigned-to-container {
+          bottom: 1px;
+          .todo-item-assigned-to {
+            margin-left: 7px;
+            display: inline-flex;
+            align-items: center;
+            .assigned-to-name {
+              margin-left: 5px;
+            }
           }
         }
       }

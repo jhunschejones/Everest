@@ -1,5 +1,7 @@
 var chart = Chartkick.charts["todo-list-<%= @todo_list.id %>"];
 var completedCount = document.querySelector(".completed-count.todo-list-<%= @todo_list.id %>");
 var newChartData = <%= raw(@completion_chart_data.to_json) %>;
-chart.updateData(newChartData);
-completedCount.innerText = `${newChartData["complete"]} / ${newChartData["complete"] + newChartData["incomplete"]} completed`;
+if (chart && completedCount) {
+  chart.updateData(newChartData);
+  completedCount.innerText = `${newChartData["complete"]} / ${newChartData["complete"] + newChartData["incomplete"]} completed`;
+};

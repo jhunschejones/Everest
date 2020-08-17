@@ -2,6 +2,19 @@ require 'test_helper'
 
 # bundle exec ruby -Itest test/controllers/todo_items_controller_test.rb
 class TodoItemsControllerTest < ActionDispatch::IntegrationTest
+  describe "GET #show" do
+    it "loads the todo item details page" do
+      get project_todo_list_todo_item_path(projects(:everest), todo_lists(:one), todo_items(:one))
+      assert_response :success
+      assert_select "h1.todo-item-description", todo_items(:one).description
+    end
+
+    it "shows todo list breadcrumgs" do
+      get project_todo_list_todo_item_path(projects(:everest), todo_lists(:one), todo_items(:one))
+      assert_select "a.todo-item-breadcrumb-link", todo_lists(:one).name
+    end
+  end
+
   describe "GET #new" do
     describe "when no user is logged in" do
       it "redirects to the login page page" do

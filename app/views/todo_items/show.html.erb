@@ -1,0 +1,46 @@
+<div class="todo-item-details-container">
+  <div class="project-breadcrumb">
+    <%= link_to(project_path(@project), class: "project-breadcrumb-link") do %>
+      <span class="icon is-small has-text-grey-lighter">
+        <i class="fas fa-th-large"></i>
+      </span>
+      <span class="has-text-link link-text"><%= @project.name %></span>
+    <% end %>
+    <small>&nbsp;&#10095;&nbsp;</small>
+    <%= link_to("To-dos", project_todo_lists_path(@project), class: "has-text-link project-todo-lists-breadcrumb-link")%>
+    <small>&nbsp;&#10095;&nbsp;</small>
+    <%= link_to(truncate(@todo_list.name, length: 45, separator: " "), project_todo_list_path(@project, @todo_list), class: "has-text-link todo-item-breadcrumb-link")%>
+  </div>
+  <div class="todo-item-detalis-card">
+    <div class="todo-item-details" data-controller="todo-item">
+      <div class="todo-item-header-container">
+        <%= form_with(model: @todo_item, url: project_todo_list_todo_item_path(@project, @todo_list, @todo_item), method: "patch", class: "todo-item-form", data: { target: "todo-item.form"}) do |f| %>
+          <%= f.check_box :is_complete, data: { action: "change->todo-item#toggle" }, class: "todo-item-checkbox" %>
+        <% end %>
+        <div class="todo-item-header-right">
+          <h1 class="todo-item-description"><%= @todo_item.description %></h1>
+          <p class="created-at">
+            <small>Added on <%= @todo_item.created_at.localtime.strftime("%B %-d, %Y") %></small>
+          </p>
+        </div>
+      </div>
+      <div class="details-table">
+        <div class="columns is-tablet details-row">
+          <div class="column is-one-quarter left-column"><strong>Assigned to</strong></div>
+          <div class="column right-column assigned-to">
+            <%= render(partial: 'users/micro_user', locals: { user: @todo_item.assigned_to }, cache: true) %>
+            <span><%= @todo_item.assigned_to.firstname_last_initial %></span>
+          </div>
+        </div>
+        <div class="columns is-tablet details-row">
+          <div class="column is-one-quarter left-column"><strong>Due on</strong></div>
+          <div class="column right-column"><%= @todo_item.due_on&.localtime&.strftime("%B %-d, %Y") %></div>
+        </div>
+        <div class="columns is-tablet details-row">
+          <div class="column is-one-quarter left-column"><strong>Notes</strong></div>
+          <div class="column right-column"><%= @todo_item.notes %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

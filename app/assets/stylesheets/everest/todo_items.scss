@@ -1,3 +1,109 @@
-// Place all the styles related to the todo_items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+$todo-item-breakpoint: 769px;
+
+.todo-item-details-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .project-breadcrumb {
+    padding-left: 20px;
+    padding-right: 20px;
+    @media screen and (max-width: $todo-item-breakpoint) {
+      height: 100%;
+      max-height: 70px;
+      padding-bottom: 12px;
+    }
+  }
+  .todo-item-detalis-card {
+    margin-top: 10px;
+    margin-bottom: 18px;
+    padding: 20px;
+    background-color: $card-background;
+    box-shadow: $deep-box-shadow;
+    width: 90%;
+    max-width: 930px;
+    min-height: 88vh;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    @media screen and (min-width: $navbar-breakpoint) {
+      margin-bottom: 35px;
+    }
+    .todo-item-details {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 680px;
+      padding-bottom: 25px;
+      .todo-item-header-container {
+        display: block;
+        border-bottom: 1px solid hsl(0, 0%, 86%);
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+        margin-top: 40px;
+        position: relative;
+        @media screen and (max-width: $todo-item-breakpoint) {
+          margin-top: 10px;
+        }
+        .todo-item-form {
+          position: absolute;
+          left: 120px;
+          top: 7px;
+          @media screen and (max-width: $todo-item-breakpoint) {
+            left: 0px;
+          }
+          .todo-item-checkbox {
+            height: 35px;
+            width: 35px;
+            cursor: pointer;
+          }
+        }
+        .todo-item-header-right {
+          display: block;
+          margin-left: 180px;
+          @media screen and (max-width: $todo-item-breakpoint) {
+            margin-left: 50px;
+          }
+          .todo-item-description {
+            color: $dark-text-color;
+            font-size: 2em;
+            font-weight: 700;
+            line-height: 1.15;
+          }
+        }
+      }
+      .details-table {
+        margin: 0px 10px;
+        color: $dark-text-color;
+        .details-row {
+          &:not(:last-child) {
+            border-bottom: 1px solid hsl(0, 0%, 86%);
+          }
+          .right-column,
+          .left-column {
+            padding-top: 8px;
+          }
+          .left-column {
+            padding-bottom: 0px;
+            @media screen and (min-width: $todo-item-breakpoint) {
+              text-align: right;
+              padding-bottom: 8px;
+            }
+          }
+          .right-column {
+            padding-top: 4px;
+            @media screen and (min-width: $todo-item-breakpoint) {
+              padding-top: 8px;
+            }
+          }
+          .assigned-to {
+            display: flex;
+            align-items: center;
+            .user-avatar {
+              margin-right: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :activities, except: [:index, :show, :destroy]
     resources :documents, except: [:destroy]
     resources :todo_lists, except: [:destroy] do
-      resources :todo_items, except: [:show, :index, :destroy]
+      resources :todo_items, except: [:index, :destroy]
     end
   end
 
