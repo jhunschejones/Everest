@@ -105,16 +105,17 @@
     display: block;
     position: relative;
     margin-bottom: 9px;
+    .todo-item-form {
+      position: absolute;
+      padding-top: 3px;
+      .todo-item-checkbox {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
     .todo-item-link {
       color: $dark-text-color;
-      .todo-item-form {
-        position: absolute;
-        padding-top: 3px;
-        .todo-item-checkbox {
-          width: 20px;
-          height: 20px;
-        }
-      }
       .todo-item-right-content {
         margin-left: 28px;
         display: block;
