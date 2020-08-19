@@ -49,18 +49,18 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
       assert_select "h1.project-document-title", documents(:blog_post).title
     end
 
-    describe "when document is for application" do
-      it "redirects resume to application document page" do
+    describe "when document is for basecamp" do
+      it "redirects resume to basecamp document page" do
         get project_document_path(projects(:everest), documents(:resume))
-        assert_redirected_to application_path(document: "Resume")
+        assert_redirected_to basecamp_path(document: "Resume")
         follow_redirect!
         assert_response :success
         assert_select "h1.project-document-title", documents(:resume).title
       end
 
-      it "redirects cover letter to application document page" do
+      it "redirects cover letter to basecamp document page" do
         get project_document_path(projects(:everest), documents(:cover_letter))
-        assert_redirected_to application_path(document: "Cover Letter")
+        assert_redirected_to basecamp_path(document: "Cover Letter")
         follow_redirect!
         assert_response :success
         assert_select "h1.project-document-title", documents(:cover_letter).title
@@ -179,21 +179,21 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  describe "GET #application" do
+  describe "GET #basecamp" do
     it "shows the resume page" do
-      get application_path, params: { document: "Resume" }
+      get basecamp_path, params: { document: "Resume" }
       assert_response :success
       assert_select "h1.project-document-title", "Resume"
     end
 
     it "shows the cover letter page" do
-      get application_path, params: { document: "Cover Letter" }
+      get basecamp_path, params: { document: "Cover Letter" }
       assert_response :success
       assert_select "h1.project-document-title", "Cover Letter"
     end
 
-    it "redirects to the project path for unrecognized job application document" do
-      get application_path, params: { document: "Shopping List" }
+    it "redirects to the project path for unrecognized job basecamp document" do
+      get basecamp_path, params: { document: "Shopping List" }
       assert_redirected_to projects_path
     end
   end
@@ -201,7 +201,7 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
   describe "GET #application_edit" do
     describe "when no user is logged in" do
       it "redirects to the login page page" do
-        get application_edit_path, params: { document: "Cover Letter" }
+        get basecamp_edit_path, params: { document: "Cover Letter" }
         assert_redirected_to login_path
       end
     end
@@ -211,16 +211,16 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
         login_as(users(:project_admin))
       end
 
-      describe "when the document is not for application" do
+      describe "when the document is not for basecamp" do
         it "redirects to the projects path" do
-          get application_edit_path, params: { document: "Shopping List" }
+          get basecamp_edit_path, params: { document: "Shopping List" }
           assert_redirected_to projects_path
         end
       end
 
-      describe "when the document is for application" do
+      describe "when the document is for basecamp" do
         it "shows the edit project document page for the resume" do
-          get application_edit_path, params: { document: "Resume" }
+          get basecamp_edit_path, params: { document: "Resume" }
           assert_redirected_to edit_project_document_path(projects(:everest), documents(:resume))
           follow_redirect!
           assert_response :success
@@ -231,7 +231,7 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
         end
 
         it "shows the edit project document page for the cover letter" do
-          get application_edit_path, params: { document: "Cover Letter" }
+          get basecamp_edit_path, params: { document: "Cover Letter" }
           assert_redirected_to edit_project_document_path(projects(:everest), documents(:cover_letter))
           follow_redirect!
           assert_response :success

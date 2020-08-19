@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  skip_before_action :authenticate_user, only: [:index, :show, :application]
+  skip_before_action :authenticate_user, only: [:index, :show, :basecamp]
   before_action :set_document_and_project, only: [:show, :edit, :update]
 
   def index
@@ -14,7 +14,7 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    return redirect_to application_path(document: @document.title) if @document.is_for_application?
+    return redirect_to basecamp_path(document: @document.title) if @document.is_for_basecamp?
   end
 
   def new
@@ -35,13 +35,13 @@ class DocumentsController < ApplicationController
     redirect_to project_document_path(@project, @document)
   end
 
-  def application
-    @document = Document.for_application(params[:document])
+  def basecamp
+    @document = Document.for_basecamp(params[:document])
     redirect_to projects_path unless @document.present?
   end
 
-  def application_edit
-    @document = Document.for_application(params[:document])
+  def basecamp_edit
+    @document = Document.for_basecamp(params[:document])
     return redirect_to projects_path unless @document.present?
     redirect_to edit_project_document_path(@document.project_id, @document.id)
   end

@@ -19,8 +19,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get "/application" => "documents#application"
-  get "/application/edit" => "documents#application_edit"
+  get "/basecamp" => "documents#basecamp"
+  get "/basecamp/edit" => "documents#basecamp_edit"
 
   %w( 404 422 500 503 ).each do |code|
     get code, :to => "static_pages#error", :code => code
