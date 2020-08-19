@@ -39,5 +39,4 @@ group :test do
   gem 'webdrivers'
   gem 'minitest-rails'
   gem 'database_cleaner'
-  gem 'mocha'
 end

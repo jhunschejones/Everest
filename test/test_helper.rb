@@ -2,7 +2,6 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 require 'minitest/rails' # allows `describe` blocks
-require 'mocha/minitest' # alows mocking
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
@@ -18,8 +17,5 @@ class ActiveSupport::TestCase
 
   teardown do
     DatabaseCleaner.clean
-    # ActionMailer::Base.deliveries.clear
   end
-
-  # include ActiveJob::TestHelper
 end
