@@ -43,7 +43,7 @@
         display: block;
         width: calc(50% - 120px);
         height: 1px;
-        background: hsl(0, 0%, 86%);
+        background: $light-grey-border;
         left: 20px;
         top: 50%;
         position: absolute;
@@ -53,7 +53,7 @@
         display: block;
         width: calc(50% - 120px);
         height: 1px;
-        background: hsl(0, 0%, 86%);
+        background: $light-grey-border;
         right: 20px;
         top: 50%;
         position: absolute;
@@ -67,7 +67,7 @@
     @media screen and (min-width: 1035px) {
       .activity {
         padding-right: 20px;
-        border-right: 1px solid hsl(0, 0%, 86%);
+        border-right: 1px solid $light-grey-border;
       }
     }
   }
@@ -79,7 +79,7 @@
     @media screen and (min-width: 1035px) {
       .activity {
         padding-left: 20px;
-        border-left: 1px solid hsl(0, 0%, 86%);
+        border-left: 1px solid $light-grey-border;
       }
     }
   }

@@ -36,7 +36,7 @@ $todo-item-breakpoint: 769px;
       padding-bottom: 25px;
       .todo-item-header-container {
         display: block;
-        border-bottom: 1px solid hsl(0, 0%, 86%);
+        border-bottom: 1px solid $light-grey-border;
         padding-bottom: 20px;
         margin-bottom: 10px;
         margin-top: 40px;
@@ -76,7 +76,7 @@ $todo-item-breakpoint: 769px;
         color: $dark-text-color;
         .details-row {
           &:not(:last-child) {
-            border-bottom: 1px solid hsl(0, 0%, 86%);
+            border-bottom: 1px solid $light-grey-border;
           }
           .right-column,
           .left-column {
