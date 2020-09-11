@@ -30,7 +30,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
 
   describe "GET #new" do
     describe "when no user is logged in" do
-      it "redirects to the login page page" do
+      it "redirects to the login page" do
         get new_project_path
         assert_redirected_to login_path
       end
@@ -51,7 +51,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
 
   describe "GET #edit" do
     describe "when no user is logged in" do
-      it "redirects to the login page page" do
+      it "redirects to the login page" do
         get edit_project_path(projects(:everest))
         assert_redirected_to login_path
       end
@@ -81,7 +81,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
         end
       end
 
-      it "redirects to the login page page" do
+      it "redirects to the login page" do
         post projects_path, params: { project: { name: "Everest II: This time it's personal" } }
         assert_redirected_to login_path
       end
@@ -114,7 +114,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
         end
       end
 
-      it "redirects to the login page page" do
+      it "redirects to the login page" do
         patch project_path(projects(:everest)), params: { project: { name: "Everest II: This time it's personal" } }
         assert_redirected_to login_path
       end
