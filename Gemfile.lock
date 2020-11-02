@@ -64,7 +64,7 @@ GEM
     blind_index (2.2.0)
       activesupport (>= 5)
       argon2-kdf (>= 0.1.1)
-    bootsnap (1.4.8)
+    bootsnap (1.5.0)
       msgpack (~> 1.0)
     builder (3.2.4)
     bulma-rails (0.9.0)
@@ -78,7 +78,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
-    chartkick (3.4.1)
+    chartkick (3.4.2)
     childprocess (3.0.0)
     closure-compiler (1.1.14)
     concurrent-ruby (1.1.7)
@@ -117,7 +117,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     pg (1.2.3)
     public_suffix (4.0.6)
-    puma (5.0.2)
+    puma (5.0.4)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-proxy (0.6.5)
@@ -209,7 +209,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.0)
+    zeitwerk (2.4.1)
 
 PLATFORMS
   ruby
