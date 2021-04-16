@@ -38,6 +38,7 @@
           margin: 0px 0px 12px -2px;
           .todo-list-pie-chart {
             margin: -10px 10px 0px 0px;
+            pointer-events: none;
           }
           .todo-list-header-container-right {
             margin-top: -30px;
@@ -85,6 +86,7 @@
         margin: 0px 0px 12px -6px;
         .todo-list-pie-chart {
           margin-right: 10px;
+          pointer-events: none;
         }
         .todo-list-header-container-right {
           margin-top: -30px;

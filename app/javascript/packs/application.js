@@ -22,5 +22,4 @@ import "controllers"
 require("trix")
 require("@rails/actiontext")
 
-require("chartkick")
-require("chart.js")
+require("chartkick/chart.js")
