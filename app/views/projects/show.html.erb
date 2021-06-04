@@ -33,9 +33,11 @@
 
     <h1 class="activities-title">Project Activity</h1>
     <div class="activities-timeline">
-      <% @activities_by_month_and_year.each do |month_and_year, activities| %>
-        <h2 class="activity-month-header"><%= month_and_year %></h2>
-        <%= render(partial: 'activities/activity', collection: activities, locals: { direction: cycle("left", "right") }, cached: true) %>
+      <% cache("views/projects/show/project-#{@project.id}/all_activities", skip_digest: true) do %>
+        <% @activities_by_month_and_year.each do |month_and_year, activities| %>
+          <h2 class="activity-month-header"><%= month_and_year %></h2>
+          <%= render(partial: 'activities/activity', collection: activities, locals: { direction: cycle("left", "right") }, cached: false) %>
+        <% end %>
       <% end %>
     </div>
   </div>

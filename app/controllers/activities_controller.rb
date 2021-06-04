@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user, only: [:index]
   before_action :set_activity_and_project, except: [:index, :new, :create]
+  after_action :bust_project_activity_cache, only: [:create, :update]
 
   def index
     @activities_by_month_and_year =
@@ -45,5 +46,9 @@ class ActivitiesController < ApplicationController
   def set_activity_and_project
     @activity = Activity.find(params[:id])
     @project = Project.find(params[:project_id])
+  end
+
+  def bust_project_activity_cache
+    expire_fragment("views/projects/show/project-#{@activity.project_id}/all_activities")
   end
 end
