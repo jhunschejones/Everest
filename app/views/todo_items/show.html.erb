@@ -15,7 +15,10 @@
     <div class="todo-item-details" data-controller="todo-item">
       <div class="todo-item-header-container">
         <%= form_with(model: @todo_item, url: project_todo_list_todo_item_path(@project, @todo_list, @todo_item), method: "patch", class: "todo-item-form", data: { "todo-item-target": "form" }) do |f| %>
-          <%= f.check_box :is_complete, data: { action: "change->todo-item#toggle" }, class: "todo-item-checkbox" %>
+          <label class="todo-item-checkbox-container">
+            <%= f.check_box :is_complete, data: { action: "change->todo-item#toggle" }, class: "todo-item-checkbox" %>
+            <span class="checkmark"></span>
+          </label>
         <% end %>
         <div class="todo-item-header-right">
           <h1 class="todo-item-description"><%= @todo_item.description %></h1>
