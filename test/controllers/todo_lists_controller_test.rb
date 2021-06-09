@@ -13,6 +13,16 @@ class TodoListsControllerTest < ActionDispatch::IntegrationTest
       get project_todo_lists_path(projects(:everest))
       assert_select "div.project-breadcrumb"
     end
+
+    it "shows all the todo lists" do
+      get project_todo_lists_path(projects(:everest))
+      assert_select "div.todo-list", count: 2
+    end
+
+    it "shows all the todo list items" do
+      get project_todo_lists_path(projects(:everest))
+      assert_select "div.todo-item", count: 3
+    end
   end
 
   describe "GET #show" do

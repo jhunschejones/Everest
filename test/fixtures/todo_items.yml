@@ -7,3 +7,8 @@ two:
   description: "Do this item second"
   todo_list: one
   assigned_to: project_admin
+
+three:
+  description: "This item is in another list!"
+  todo_list: two
+  assigned_to: project_admin

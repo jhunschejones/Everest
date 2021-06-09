@@ -1,3 +1,7 @@
 one:
   name: The first Everest to-do list
   project: everest
+
+two:
+  name: A second todo list
+  project: everest

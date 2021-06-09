@@ -24,6 +24,15 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
 
     it "shows project todo list previews" do
       get project_path(projects(:everest))
+      assert_select "div.todo-list-preview", count: 2
+    end
+
+    it "only shows un-completed todo list items" do
+      get project_path(projects(:everest))
+      assert_select "div.todo-item-preview", count: 3
+
+      todo_items(:two).update!(is_complete: true)
+      get project_path(projects(:everest))
       assert_select "div.todo-item-preview", count: 2
     end
   end

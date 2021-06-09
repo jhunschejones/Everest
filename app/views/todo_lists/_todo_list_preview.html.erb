@@ -4,7 +4,7 @@
   </h3>
 
   <div class="todo-items-preivew">
-    <% todo_list.todo_items.sort_by(&:order).sort_by(&:created_at)[0..1].each do |todo_item| %>
+    <% todo_list.todo_items.reject(&:is_complete?).sort_by(&:order).sort_by(&:created_at).each do |todo_item| %>
       <div class="todo-item-preview">
         <span class="todo-item-preview-description">
           <%= todo_item.description %>
