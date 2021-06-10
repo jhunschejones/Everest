@@ -7,7 +7,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     get login_path
     assert_response :success
 
-    post login_path, params: { email: users(:project_admin).email, password: "secret" }
+    post login_path, params: { email: users(:project_admin).email, password: "secret_secret" }
     follow_redirect!
     assert_equal projects_path, path
   end
@@ -18,11 +18,5 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_equal "Succesfully logged out", flash[:notice]
     assert_equal login_path, path
-  end
-
-  private
-
-  def login_as(user)
-    post login_path, params: { email: user.email, password: "secret" }
   end
 end

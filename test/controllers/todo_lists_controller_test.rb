@@ -204,10 +204,4 @@ class TodoListsControllerTest < ActionDispatch::IntegrationTest
       end
     end
   end
-
-  private
-
-  def login_as(user)
-    post login_path, params: { email: user.email, password: "secret" }
-  end
 end

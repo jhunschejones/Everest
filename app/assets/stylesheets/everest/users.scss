@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  background-color: $magenta;
   flex-shrink: 0;
 }
 
@@ -26,3 +25,13 @@
   width: 20px;
   font-size: 0.65em;
 }
+
+.user-avatar-magenta { background-color: $magenta-avatar; }
+.user-avatar-orange { background-color: $orange-avatar; }
+.user-avatar-gray { background-color: $gray-avatar; }
+.user-avatar-gold { background-color: $gold-avatar; }
+.user-avatar-turquoise { background-color: $turquoise-avatar; }
+.user-avatar-teal { background-color: $teal-avatar; }
+.user-avatar-lime { background-color: $lime-avatar; }
+.user-avatar-brown { background-color: $brown-avatar; }
+.user-avatar-yellow { background-color: $yellow-avatar; }

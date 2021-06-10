@@ -10,4 +10,4 @@ project_admin:
   name_bidx: <%= User.generate_name_bidx("Carl Fox").inspect %>
   email_ciphertext: <%= User.generate_email_ciphertext("carl@dafox.com").inspect %>
   email_bidx: <%= User.generate_email_bidx("carl@dafox.com").inspect %>
-  password_digest: <%= BCrypt::Password.create('secret') %>
+  password_digest: <%= BCrypt::Password.create('secret_secret') %>

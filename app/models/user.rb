@@ -1,11 +1,24 @@
 class User < ApplicationRecord
+  AVATAR_COLORS = [
+    "magenta",
+    "orange",
+    "gray",
+    "gold",
+    "turquoise",
+    "teal",
+    "lime",
+    "brown",
+    "yellow",
+  ].freeze
+
   has_secure_password
   encrypts :email, :name
   blind_index :email, :name
 
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, confirmation: true, length: { minimum: 13 }, if: :password
+  validates :avatar_color, inclusion: { in: AVATAR_COLORS }, allow_nil: true
 
   has_many :user_projects, dependent: :destroy
   has_many :projects, through: :user_projects
@@ -30,5 +43,9 @@ class User < ApplicationRecord
       words_in_name = name.split
       words_in_name.one? ? name : "#{words_in_name.first} #{words_in_name.last.first}."
     end
+  end
+
+  def avatar_color
+    super || "magenta"
   end
 end

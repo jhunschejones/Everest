@@ -18,4 +18,8 @@ class ActiveSupport::TestCase
   teardown do
     DatabaseCleaner.clean
   end
+
+  def login_as(user)
+    post login_path, params: { email: user.email, password: "secret_secret" }
+  end
 end

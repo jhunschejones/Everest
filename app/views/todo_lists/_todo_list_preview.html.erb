@@ -10,7 +10,7 @@
           <%= todo_item.description %>
         </span>
         <span class="todo-item-preview-assigned-to">
-          <span class="user-avatar preview-user-avatar"><%= todo_item.assigned_to.initials %></span>
+          <span class="user-avatar user-avatar-<%= todo_item.assigned_to.avatar_color %> preview-user-avatar"><%= todo_item.assigned_to.initials %></span>
           <span class="has-text-grey assigned-to-name">
             <small><%= todo_item.assigned_to.firstname_last_initial %></small>
           </span>
