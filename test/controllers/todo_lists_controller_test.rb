@@ -23,6 +23,29 @@ class TodoListsControllerTest < ActionDispatch::IntegrationTest
       get project_todo_lists_path(projects(:everest))
       assert_select "div.todo-item", count: 3
     end
+
+    describe "without a project_id" do
+      it "loads the project todo lists page" do
+        get todo_lists_path
+        assert_response :success
+        assert_select "h1.project-todo-lists-title", "To-dos"
+      end
+
+      it "does not show project todo list breadcrumbs" do
+        get todo_lists_path
+        assert_select "div.project-breadcrumb", count: 0
+      end
+
+      it "shows all the todo lists" do
+        get todo_lists_path
+        assert_select "div.todo-list", count: 2
+      end
+
+      it "shows all the todo list items" do
+        get todo_lists_path
+        assert_select "div.todo-item", count: 3
+      end
+    end
   end
 
   describe "GET #show" do

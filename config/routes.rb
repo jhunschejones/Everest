@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :documents, only: [:index]
   resources :activities, only: [:index]
+  resources :todo_lists, only: [:index]
 
   resources :projects, except: [:destroy] do
     resources :project_tools, only: [:new, :edit, :create, :update]

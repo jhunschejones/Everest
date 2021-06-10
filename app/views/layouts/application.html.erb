@@ -41,17 +41,29 @@
             </span>
             <span>Activity</span>
           <% end %>
+          <%= link_to(todo_lists_path, class: "navbar-item has-text-weight-bold") do %>
+            <span class="icon is-small">
+              <i class="fas fa-list"></i>
+            </span>
+            <span>To-dos</span>
+          <% end %>
           <%= link_to(documents_path, class: "navbar-item has-text-weight-bold") do %>
             <span class="icon is-small">
               <i class="fas fa-file-alt"></i>
             </span>
-            <span>Documents</span>
+            <span>Docs & Files</span>
           <% end %>
           <%= link_to(basecamp_path(document: Document::RESUME), class: "navbar-item has-text-weight-bold") do %>
             <span class="icon is-small">
               <i class="fas fa-user-check"></i>
             </span>
-            <span>Resume</span>
+            <span>My Stuff</span>
+          <% end %>
+          <%= link_to("https://github.com/jhunschejones/Everest", target: "_blank", class: "navbar-item has-text-weight-bold") do %>
+            <span class="icon is-small">
+              <i class="fas fa-code"></i>
+            </span>
+            <span>Code</span>
           <% end %>
         </div>
 

@@ -11,11 +11,11 @@
           <%= todo_list.completion_chart_data[:complete] %> / <%= todo_list.todo_items.size %> completed
         </p>
       <% end %>
-      <%= link_to(todo_list.name, project_todo_list_path(@project, todo_list), class: "todo-list-link has-text-link") %>
+      <%= link_to(todo_list.name, project_todo_list_path(todo_list.project_id, todo_list), class: "todo-list-link has-text-link") %>
     </div>
   </div>
 
   <div class="todo-items">
-    <%= render(partial: 'todo_items/todo_item', collection: todo_list.todo_items.sort_by(&:order).sort_by(&:created_at), locals: { project: @project }, cached: true) %>
+    <%= render(partial: 'todo_items/todo_item', collection: todo_list.todo_items.sort_by(&:order).sort_by(&:created_at), locals: { project_id: todo_list.project_id }, cached: true) %>
   </div>
 </div>

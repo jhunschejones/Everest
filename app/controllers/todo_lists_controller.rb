@@ -3,8 +3,13 @@ class TodoListsController < ApplicationController
   before_action :set_todo_list_and_project, only: [:show, :edit, :update]
 
   def index
-    @todo_lists = TodoList.includes(todo_items: [:assigned_to]).ordered.all
-    @project = Project.find(params[:project_id])
+    @todo_lists =
+      if params[:project_id].blank?
+        TodoList.includes(todo_items: [:assigned_to]).ordered.all
+      else
+        TodoList.includes(todo_items: [:assigned_to]).where(project_id: params[:project_id]).ordered
+      end
+    @project = Project.find(params[:project_id]) if params[:project_id]
   end
 
   def show

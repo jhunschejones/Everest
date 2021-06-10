@@ -1,4 +1,5 @@
 <div class="project-todo-lists-container">
+  <% if @project.present? %>
   <div class="project-breadcrumb">
     <%= link_to(project_path(@project), class: "project-breadcrumb-link") do %>
       <span class="icon is-small has-text-grey-lighter">
@@ -7,10 +8,11 @@
       <span class="has-text-link link-text"><%= @project.name %></span>
     <% end %>
   </div>
+  <% end %>
   <div class="project-todo-lists-card">
     <h1 class="project-todo-lists-title">To-dos</h1>
     <div class="project-todo-lists">
-      <%= render(partial: 'todo_lists/todo_list', collection: @todo_lists, locals: { project: @project }, cached: true) %>
+      <%= render(partial: 'todo_lists/todo_list', collection: @todo_lists, cached: true) %>
     </div>
   </div>
 </div>
