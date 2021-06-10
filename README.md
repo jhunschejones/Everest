@@ -39,7 +39,7 @@ In order to better demonstrate how I might approach a project like this in the r
 
 I am especially proud of the way I was able to use a bit of Ruby and some CSS flexbox to get the activity timeline to alternate left-to-right from one month to the next, similar to the Basecamp 3 UI. I also used CSS to recreate the Basecamp 3 place-holder avatars, instead of using images to reduce extra asset storage.
 
-Viewers of the site will also notice that it adapts well on mobile screens as well. Everest is an application for the modern web and I am a strong proponent of responsive UIs whenever possible, even when native mobile apps are an option *(as in Basecamp’s case.)* Bonus fact -- I also started learning Swift in 2020 just for fun and to keep the creative juices flowing. Perhaps a native Everest app could lie in my future?
+Viewers of the site will also notice that it adapts well on mobile screens as well. Everest is an application for the modern web and I am a strong proponent of responsive UIs whenever possible, even when native mobile apps are an option *(as in Basecamp’s case.)* Bonus fact &mdash; I also started learning Swift in 2020 just for fun and to keep the creative juices flowing. Perhaps a native Everest app could lie in my future?
 
 ***HTML-first UIs***
 
