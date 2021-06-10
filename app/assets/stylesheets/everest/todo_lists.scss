@@ -12,7 +12,7 @@
     max-width: 930px;
     min-height: 88vh;
     border-radius: 3px;
-    @media screen and (min-width: $navbar-breakpoint) {
+    @media screen and (min-width: $content-breakpoint) {
       margin-bottom: 35px;
     }
     .project-todo-lists-title {
@@ -74,7 +74,7 @@
     border-radius: 3px;
     display: flex;
     justify-content: center;
-    @media screen and (min-width: $navbar-breakpoint) {
+    @media screen and (min-width: $content-breakpoint) {
       margin-bottom: 35px;
     }
     .todo-list {
@@ -121,7 +121,6 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-
         .todo-item-checkbox {
           position: absolute;
           opacity: 0;
@@ -137,7 +136,6 @@
             }
           }
         }
-
         .checkmark {
           position: absolute;
           top: 0;

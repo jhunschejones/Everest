@@ -25,7 +25,7 @@ $todo-item-breakpoint: 769px;
     border-radius: 3px;
     display: flex;
     justify-content: center;
-    @media screen and (min-width: $navbar-breakpoint) {
+    @media screen and (min-width: $content-breakpoint) {
       margin-bottom: 35px;
     }
     .todo-item-details {

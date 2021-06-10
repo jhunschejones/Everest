@@ -1,5 +1,6 @@
 // Site variables
 $background-color: #f6f2ef;
+$navbar-background-color: rgba(246, 242, 239, 0.9);
 $dark-text-color: #283c46;
 $logo-black: #1d2d35;
 $card-background: #FFF;
@@ -9,11 +10,15 @@ $light-grey-border: #dbdbdb;
 $shallow-box-shadow: 0 0 1px rgba(0,0,0,0.25), 0 1px 3px rgba(0,0,0,0.1);
 $medium-box-shadow: 0 0 2px rgba(0,0,0,0.35), 0 1px 3px rgba(0,0,0,0.1);
 $deep-box-shadow: 0 -1px 10px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.1), 0 10px 30px #f3ece8;
+$content-breakpoint: 720px;
+$medium-menu-breakpoint: 940px;
+$small-menu-breakpoint: 770px;
+$phone-menu-breakpoint: 414px;
 
 // Bulma overrides
-$navbar-breakpoint: 770px;
-$navbar-background-color: $background-color;
+$navbar-breakpoint: 0px; // never break for dropdown nav
+$navbar-background-color: $navbar-background-color;
 $navbar-item-color: $dark-text-color;
 $navbar-item-hover-color: $dark-text-color;
-$navbar-item-hover-background-color: $background-color;
+$navbar-item-hover-background-color: $navbar-background-color;
 $navbar-dropdown-background-color: $card-background;

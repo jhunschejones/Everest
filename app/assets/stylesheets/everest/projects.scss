@@ -53,7 +53,7 @@
     max-width: 930px;
     min-height: 88vh;
     border-radius: 3px;
-    @media screen and (min-width: $navbar-breakpoint) {
+    @media screen and (min-width: $content-breakpoint) {
       margin-bottom: 35px;
     }
     .project-name {
